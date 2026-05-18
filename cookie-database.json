@@ -1,0 +1,319 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-05-18",
+  "plugins": {
+    "google-analytics": {
+      "names": [
+        "google-analytics-for-wordpress",
+        "googleanalytics",
+        "ga-google-analytics",
+        "gtm4wp",
+        "google-tag-manager"
+      ],
+      "label": "Google Analytics",
+      "category": "analytics",
+      "cookies": [
+        { "name": "_ga",    "duration": "2 ans",    "purpose": "Distingue les utilisateurs et les sessions" },
+        { "name": "_gid",   "duration": "24 heures","purpose": "Distingue les utilisateurs" },
+        { "name": "_gat",   "duration": "1 minute", "purpose": "Limite le taux de requêtes" },
+        { "name": "_ga_*",  "duration": "2 ans",    "purpose": "Maintient l'état de session (GA4)" }
+      ],
+      "provider": "Google LLC",
+      "privacy_url": "https://policies.google.com/privacy"
+    },
+    "meta-pixel": {
+      "names": [
+        "official-facebook-pixel",
+        "pixel-caffeine",
+        "facebook-for-woocommerce"
+      ],
+      "label": "Meta Pixel (Facebook)",
+      "category": "marketing",
+      "cookies": [
+        { "name": "_fbp",  "duration": "3 mois",   "purpose": "Identifie les navigateurs pour la publicité Meta" },
+        { "name": "_fbc",  "duration": "2 ans",    "purpose": "Stocke le dernier clic publicitaire Facebook" },
+        { "name": "fr",    "duration": "3 mois",   "purpose": "Publicité ciblée Facebook" }
+      ],
+      "provider": "Meta Platforms Inc.",
+      "privacy_url": "https://www.facebook.com/privacy/policy"
+    },
+    "hotjar": {
+      "names": [
+        "hotjar",
+        "hotjar-connect"
+      ],
+      "label": "Hotjar",
+      "category": "analytics",
+      "cookies": [
+        { "name": "_hjSessionUser_*", "duration": "1 an",      "purpose": "Identifie un utilisateur unique à la première visite" },
+        { "name": "_hjSession_*",     "duration": "30 minutes","purpose": "Données de session en cours" },
+        { "name": "_hjAbsoluteSessionInProgress", "duration": "30 minutes", "purpose": "Détecte la première session de navigation" },
+        { "name": "_hjFirstSeen",     "duration": "30 minutes","purpose": "Identifie les nouveaux utilisateurs" }
+      ],
+      "provider": "Hotjar Ltd.",
+      "privacy_url": "https://www.hotjar.com/legal/policies/privacy"
+    },
+    "woocommerce": {
+      "names": [
+        "woocommerce"
+      ],
+      "label": "WooCommerce",
+      "category": "functional",
+      "cookies": [
+        { "name": "woocommerce_cart_hash",       "duration": "Session",  "purpose": "Identifie le contenu du panier" },
+        { "name": "woocommerce_items_in_cart",   "duration": "Session",  "purpose": "Indique si le panier contient des articles" },
+        { "name": "wp_woocommerce_session_*",    "duration": "2 jours",  "purpose": "Stocke les données de session WooCommerce" },
+        { "name": "woocommerce_recently_viewed", "duration": "Session",  "purpose": "Produits récemment consultés" }
+      ],
+      "provider": "Automattic Inc.",
+      "privacy_url": "https://automattic.com/privacy"
+    },
+    "yoast-seo": {
+      "names": [
+        "wordpress-seo",
+        "wordpress-seo-premium"
+      ],
+      "label": "Yoast SEO",
+      "category": "functional",
+      "cookies": [
+        { "name": "_ym_uid",  "duration": "1 an",  "purpose": "Identifiant utilisateur Yoast" },
+        { "name": "_ym_d",    "duration": "1 an",  "purpose": "Date de première visite" }
+      ],
+      "provider": "Yoast BV",
+      "privacy_url": "https://yoast.com/privacy-policy"
+    },
+    "mailchimp": {
+      "names": [
+        "mailchimp-for-wp",
+        "mc4wp-premium",
+        "mailchimp-woocommerce"
+      ],
+      "label": "Mailchimp",
+      "category": "marketing",
+      "cookies": [
+        { "name": "_mailchimp_landing_page", "duration": "Session", "purpose": "Suivi de la page d'atterrissage" },
+        { "name": "mailchimp_landing_site",  "duration": "1 mois",  "purpose": "Source d'acquisition Mailchimp" }
+      ],
+      "provider": "The Rocket Science Group LLC",
+      "privacy_url": "https://mailchimp.com/legal/privacy"
+    },
+    "hubspot": {
+      "names": [
+        "leadin",
+        "hubspot"
+      ],
+      "label": "HubSpot",
+      "category": "marketing",
+      "cookies": [
+        { "name": "__hstc",   "duration": "13 mois", "purpose": "Cookie principal de suivi visiteur HubSpot" },
+        { "name": "__hssc",   "duration": "30 minutes","purpose": "Suivi de session HubSpot" },
+        { "name": "__hssrc",  "duration": "Session",  "purpose": "Détecte si le visiteur a redémarré son navigateur" },
+        { "name": "hubspotutk","duration": "13 mois", "purpose": "Identifiant unique visiteur HubSpot" }
+      ],
+      "provider": "HubSpot Inc.",
+      "privacy_url": "https://legal.hubspot.com/privacy-policy"
+    },
+    "linkedin-insight": {
+      "names": [
+        "wp-linkedin-auto-publish",
+        "linkedin-insight-tag",
+        "insert-headers-and-footers"
+      ],
+      "label": "LinkedIn Insight Tag",
+      "category": "marketing",
+      "cookies": [
+        { "name": "li_fat_id", "duration": "30 jours", "purpose": "Suivi conversions LinkedIn Ads" },
+        { "name": "UserMatchHistory", "duration": "30 jours", "purpose": "Synchronisation audiences LinkedIn" },
+        { "name": "bcookie", "duration": "1 an", "purpose": "Identifiant navigateur LinkedIn" }
+      ],
+      "provider": "LinkedIn Corporation",
+      "privacy_url": "https://www.linkedin.com/legal/privacy-policy"
+    },
+    "google-ads": {
+      "names": [
+        "google-listings-and-ads",
+        "woocommerce-google-adwords-conversion-tracking-tag"
+      ],
+      "label": "Google Ads",
+      "category": "marketing",
+      "cookies": [
+        { "name": "_gcl_au", "duration": "3 mois",  "purpose": "Suivi des conversions Google Ads" },
+        { "name": "_gcl_aw", "duration": "3 mois",  "purpose": "Données de clic Google Ads" },
+        { "name": "IDE",     "duration": "13 mois", "purpose": "Publicité ciblée Google DoubleClick" }
+      ],
+      "provider": "Google LLC",
+      "privacy_url": "https://policies.google.com/privacy"
+    },
+    "contact-form-7": {
+      "names": [
+        "contact-form-7"
+      ],
+      "label": "Contact Form 7",
+      "category": "functional",
+      "cookies": [
+        { "name": "scsrf_token", "duration": "Session", "purpose": "Protection contre les attaques CSRF" }
+      ],
+      "provider": "Takayuki Miyoshi",
+      "privacy_url": "https://contactform7.com/privacy-policy"
+    },
+    "wordfence": {
+      "names": [
+        "wordfence",
+        "wordfence-login-security"
+      ],
+      "label": "Wordfence Security",
+      "category": "essential",
+      "cookies": [
+        { "name": "wfwaf-authcookie-*", "duration": "Session", "purpose": "Authentification sécurisée Wordfence" },
+        { "name": "wordfence_verifiedHuman", "duration": "1 jour", "purpose": "Vérifie que le visiteur est humain" }
+      ],
+      "provider": "Defiant Inc.",
+      "privacy_url": "https://www.wordfence.com/privacy-policy"
+    },
+    "recaptcha": {
+      "names": [
+        "advanced-google-recaptcha",
+        "recaptcha-in-woocommerce"
+      ],
+      "label": "Google reCAPTCHA",
+      "category": "functional",
+      "cookies": [
+        { "name": "_GRECAPTCHA", "duration": "6 mois", "purpose": "Distingue les humains des bots" }
+      ],
+      "provider": "Google LLC",
+      "privacy_url": "https://policies.google.com/privacy"
+    },
+    "pinterest": {
+      "names": [
+        "pinterest-for-woocommerce",
+        "pinterest-rich-pins-automatic"
+      ],
+      "label": "Pinterest Tag",
+      "category": "marketing",
+      "cookies": [
+        { "name": "_pinterest_ct_ua", "duration": "1 an",    "purpose": "Suivi conversions Pinterest" },
+        { "name": "_pin_unauth",      "duration": "1 an",    "purpose": "Suivi visiteurs non connectés Pinterest" }
+      ],
+      "provider": "Pinterest Inc.",
+      "privacy_url": "https://policy.pinterest.com/privacy-policy"
+    },
+    "tiktok-pixel": {
+      "names": [
+        "tiktok-for-business",
+        "tiktok-pixel"
+      ],
+      "label": "TikTok Pixel",
+      "category": "marketing",
+      "cookies": [
+        { "name": "_ttp",  "duration": "13 mois", "purpose": "Suivi conversions TikTok Ads" },
+        { "name": "tt_appInfo", "duration": "Session", "purpose": "Données session TikTok" }
+      ],
+      "provider": "TikTok Inc.",
+      "privacy_url": "https://www.tiktok.com/legal/privacy-policy"
+    },
+    "crisp-chat": {
+      "names": [
+        "crisp-wp",
+        "crisp"
+      ],
+      "label": "Crisp Chat",
+      "category": "functional",
+      "cookies": [
+        { "name": "crisp-client%2Fsession%2F*", "duration": "6 mois", "purpose": "Identifiant session chat Crisp" }
+      ],
+      "provider": "Crisp IM SAS",
+      "privacy_url": "https://crisp.chat/en/privacy"
+    },
+    "intercom": {
+      "names": [
+        "intercom"
+      ],
+      "label": "Intercom",
+      "category": "functional",
+      "cookies": [
+        { "name": "intercom-id-*",      "duration": "9 mois",   "purpose": "Identifiant visiteur anonyme Intercom" },
+        { "name": "intercom-session-*", "duration": "1 semaine","purpose": "Données de session Intercom" }
+      ],
+      "provider": "Intercom Inc.",
+      "privacy_url": "https://www.intercom.com/legal/privacy"
+    },
+    "stripe": {
+      "names": [
+        "woocommerce-gateway-stripe",
+        "stripe-payments"
+      ],
+      "label": "Stripe",
+      "category": "functional",
+      "cookies": [
+        { "name": "__stripe_mid",  "duration": "1 an",     "purpose": "Prévention fraude Stripe" },
+        { "name": "__stripe_sid",  "duration": "30 minutes","purpose": "Session paiement Stripe" }
+      ],
+      "provider": "Stripe Inc.",
+      "privacy_url": "https://stripe.com/privacy"
+    },
+    "paypal": {
+      "names": [
+        "woocommerce-paypal-payments",
+        "paypal-plus-for-woocommerce"
+      ],
+      "label": "PayPal",
+      "category": "functional",
+      "cookies": [
+        { "name": "PYPF",       "duration": "1 an",  "purpose": "Prévention fraude PayPal" },
+        { "name": "ts",         "duration": "3 ans", "purpose": "Sécurité et prévention fraude PayPal" },
+        { "name": "ts_c",       "duration": "3 ans", "purpose": "Sécurité transaction PayPal" }
+      ],
+      "provider": "PayPal Inc.",
+      "privacy_url": "https://www.paypal.com/privacy"
+    },
+    "systeme-io": {
+      "names": [
+        "systeme-io"
+      ],
+      "label": "Systeme.io",
+      "category": "marketing",
+      "cookies": [
+        { "name": "sio_referral", "duration": "30 jours", "purpose": "Suivi d'affiliation Systeme.io" },
+        { "name": "sio_session",  "duration": "Session",  "purpose": "Session utilisateur Systeme.io" }
+      ],
+      "provider": "Systeme.io",
+      "privacy_url": "https://systeme.io/privacy-policy"
+    },
+    "cloudflare": {
+      "names": [
+        "cloudflare-flexible-ssl",
+        "wp-cloudflare-page-cache"
+      ],
+      "label": "Cloudflare",
+      "category": "essential",
+      "cookies": [
+        { "name": "__cfduid",  "duration": "1 an",    "purpose": "Identifie le trafic Cloudflare de confiance" },
+        { "name": "cf_clearance", "duration": "1 an", "purpose": "Accès accordé après vérification Cloudflare" }
+      ],
+      "provider": "Cloudflare Inc.",
+      "privacy_url": "https://www.cloudflare.com/privacypolicy"
+    }
+  },
+  "categories": {
+    "essential": {
+      "label": "Essentiels",
+      "description": "Indispensables au fonctionnement du site. Ne peuvent pas être désactivés.",
+      "required": true
+    },
+    "analytics": {
+      "label": "Analytiques",
+      "description": "Nous aident à comprendre comment les visiteurs interagissent avec le site.",
+      "required": false
+    },
+    "marketing": {
+      "label": "Marketing",
+      "description": "Utilisés pour vous proposer des publicités personnalisées sur d'autres sites.",
+      "required": false
+    },
+    "functional": {
+      "label": "Fonctionnels",
+      "description": "Améliorent l'expérience utilisateur (chat, paiement, formulaires avancés).",
+      "required": false
+    }
+  }
+}
