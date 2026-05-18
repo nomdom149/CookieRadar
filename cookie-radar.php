@@ -63,4 +63,3 @@ add_action( 'wp_enqueue_scripts', function() {
 
 add_action( 'activated_plugin',   [ 'CookieRadar_Scanner', 'on_plugin_change' ] );
 add_action( 'deactivated_plugin', [ 'CookieRadar_Scanner', 'on_plugin_change' ] );
-}
