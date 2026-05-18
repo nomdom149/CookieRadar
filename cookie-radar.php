@@ -48,7 +48,7 @@ function cookieradar_enqueue_front() {
         COOKIERADAR_URL . 'assets/banner.js',
         array(),
         COOKIERADAR_VERSION,
-        true
+        false
     );
 
     $categories = CookieRadar_Scanner::get_detected_categories();
