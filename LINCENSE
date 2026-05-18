@@ -1,0 +1,447 @@
+# PROPRIETARY LICENSE — CookieRadar
+**Copyright (C) 2026 Hanane Risayindi — Websait Agency**
+https://websait.com — contact@websait.com
+Version française plus bas
+
+All rights reserved.
+
+---
+
+## Pricing
+
+**€15 — one-time payment, major version updates included.**
+
+---
+
+## 1. License Grant
+
+The purchase of CookieRadar grants you a personal, non-exclusive and
+non-transferable license to install and use the plugin on one (1) WordPress
+website owned by you or managed by you on a professional basis.
+
+Any use beyond these terms is subject to prior written approval from
+Websait Agency.
+
+---
+
+## 2. Features Covered
+
+CookieRadar is a WordPress plugin designed to help you implement a cookie
+consent mechanism for your website visitors. It includes:
+
+- Automatic detection of active WordPress plugins likely to set cookies,
+  by comparison with a regularly updated internal database.
+- A granular consent banner allowing visitors to accept, decline or
+  customize their preferences by category (essential, functional,
+  analytics, marketing).
+- Blocking of third-party scripts until explicit visitor consent is obtained.
+- Dynamic activation of third-party scripts after consent (Google Analytics,
+  Meta Pixel, Hotjar, LinkedIn, TikTok and other detected services).
+- Automatic generation of a "Cookie Policy" page on your website, dynamically
+  updated whenever a cookie-using plugin is activated or deactivated.
+- A WordPress dashboard to customize banner texts, display position and
+  primary color without touching any code.
+- Compatibility with major WordPress themes (Divi 5, Elementor, Gutenberg,
+  custom themes) and major caching plugins (WP Rocket, W3 Total Cache,
+  WP Super Cache, LiteSpeed Cache).
+- Consent stored in localStorage with timestamp and 180-day expiration.
+
+---
+
+## 3. Restrictions
+
+You are strictly prohibited from:
+
+a) Copying, reproducing or duplicating the plugin beyond the use permitted
+   under this license.
+
+b) Redistributing, reselling, renting, lending, assigning or sublicensing
+   the plugin to any third party, whether for payment or free of charge,
+   in any form whatsoever.
+
+c) Modifying, adapting, translating, decompiling, disassembling or attempting
+   to extract the source code of the plugin, in whole or in part, for purposes
+   other than those expressly permitted by applicable law.
+
+d) Removing, obscuring or altering any copyright notices, trademarks or other
+   proprietary notices contained in the plugin or its documentation.
+
+e) Using the plugin to create a competing product, derivative product or any
+   service intended for distribution or commercialization, without prior
+   written authorization from Websait Agency.
+
+f) Sharing your access credentials or download files with unlicensed
+   third parties.
+
+---
+
+## 4. Multi-Site and Agency Licenses
+
+This license covers one (1) website. If you manage multiple websites for
+your own use or on behalf of clients, one license is required per active
+site. Multi-site packages and agency licenses are available on request at
+contact@websait.com.
+
+---
+
+## 5. Updates and Evolution
+
+The purchase includes all corrective updates and new features released within
+the acquired major version. New major versions may be subject to a separate
+purchase at a preferential rate for existing licensees.
+
+---
+
+## 6. Support
+
+Email support is included for 6 months from the date of purchase at
+contact@websait.com. Support covers installation, configuration and
+functional issues within a standard WordPress environment.
+
+Support does not cover conflicts caused by unlisted third-party themes or
+plugins, or customizations outside the features described in section 2.
+
+---
+
+## 7. GDPR Compliance — Important Disclaimer
+
+CookieRadar is designed to help you implement the technical mechanisms
+required to collect visitor consent, in line with the general principles
+of the General Data Protection Regulation (GDPR — EU Regulation 2016/679)
+and the recommendations of European data protection authorities.
+
+**CookieRadar does not constitute legal advice and does not guarantee full
+and automatic compliance of your website with the GDPR or any other
+applicable regulation.**
+
+Cookie and data protection regulations are subject to change. As the data
+controller under the GDPR, it is your responsibility to:
+
+- Stay informed of legislative and regulatory developments applicable to
+  your situation (GDPR, national data protection laws, ePrivacy Directive,
+  applicable national guidelines).
+- Verify that the cookie categories detected by CookieRadar actually match
+  the cookies set on your website and add any missing entries manually
+  if needed.
+- Ensure that the legal basis for processing each cookie is correctly
+  documented.
+- Keep your privacy policy consistent with your cookie policy.
+- Consult a legal professional if your situation requires it.
+
+Websait Agency strives to keep CookieRadar aligned with recognized best
+practices for cookie consent, without being able to guarantee that its
+use alone is sufficient to meet all legal obligations applicable to your
+website.
+
+---
+
+## 8. Disclaimer of Warranties
+
+CookieRadar is provided "as is", without warranty of any kind, express or
+implied, including but not limited to warranties of merchantability, fitness
+for a particular purpose or non-infringement.
+
+Websait Agency does not warrant that the plugin will operate uninterrupted
+or error-free, that it will be compatible with all hosting environments,
+themes or third-party plugins, or that it will be free from security
+vulnerabilities.
+
+---
+
+## 9. Limitation of Liability
+
+In no event shall Websait Agency, its officers, employees or partners be
+liable for any direct, indirect, incidental, special or consequential damages
+arising from the use or inability to use CookieRadar, including but not
+limited to: data loss, loss of revenue, administrative fines or penalties,
+reputational damage, even if Websait Agency has been advised of the
+possibility of such damages.
+
+Websait Agency's total liability under this license shall in no event exceed
+the amount paid for the acquisition of the license.
+
+---
+
+## 10. Termination
+
+This license is automatically terminated, without notice or refund, upon
+breach of any of the above conditions. Upon termination, you must immediately
+cease all use of the plugin and delete all copies in your possession,
+in whatever form.
+
+---
+
+## 11. Governing Law and Jurisdiction
+
+This license is governed by Belgian law. Any dispute relating to the
+interpretation, performance or termination of this license shall be subject
+to the exclusive jurisdiction of the competent courts of Belgium, without
+prejudice to the right of Websait Agency to seek injunctive or emergency
+relief before any competent court.
+
+---
+
+## 12. Severability
+
+If any provision of this license is found invalid or unenforceable by a
+court of competent jurisdiction, the remaining provisions shall remain in
+full force and effect.
+
+---
+
+*CookieRadar — WordPress Cookie Consent Plugin*
+*Copyright (C) 2026 Hanane Risayindi — Websait Agency*
+*https://websait.com — contact@websait.com*
+
+## Pricing
+
+**€25 — one-time payment, updates included.**
+
+CookieRadar is built for solopreneurs, freelancers, and small businesses who want
+to stay GDPR-compliant without spending hours on it or needing any technical
+knowledge about cookies.
+
+Most consent plugins require tedious manual setup: declaring every cookie one by
+one, keeping the list up to date every time a plugin changes, writing the policy
+page yourself.
+
+CookieRadar handles all of that for you:
+
+- ✅ Automatic detection on activation
+- ✅ Policy page generated and updated with zero manual action
+- ✅ GDPR-compliant banner live in under 2 minutes
+- ✅ No technical knowledge required
+
+👉 [Get CookieRadar at websait.com](https://websait.com/cookieradar)
+
+
+
+
+
+# LICENCE PROPRIÉTAIRE — CookieRadar
+**Copyright (C) 2026 Hanane Risayindi — Websait Agency**
+https://websait.com — contact@websait.com
+
+Tous droits réservés.
+
+---
+
+## Tarif
+
+**15 € — paiement unique, mises à jour de la version majeure incluses.**
+
+---
+
+## 1. Objet de la licence
+
+L'achat de CookieRadar vous accorde une licence personnelle, non exclusive
+et non transférable pour installer et utiliser le plugin sur un (1) site
+WordPress vous appartenant ou géré par vous à titre professionnel.
+
+Toute utilisation au-delà des présentes conditions est soumise à l'accord
+écrit préalable de Websait Agency.
+
+---
+
+## 2. Fonctionnalités couvertes
+
+CookieRadar est un plugin WordPress conçu pour faciliter la mise en place
+d'un mécanisme de recueil du consentement des visiteurs concernant l'utilisation
+de cookies sur votre site. Il inclut notamment :
+
+- La détection automatique des plugins WordPress actifs susceptibles de déposer
+  des cookies, par comparaison avec une base de données interne régulièrement
+  enrichie.
+- L'affichage d'un banner de consentement granulaire permettant aux visiteurs
+  d'accepter, de refuser ou de personnaliser leurs préférences par catégorie
+  (essentiels, fonctionnels, analytiques, marketing).
+- Le blocage des scripts tiers jusqu'à l'obtention du consentement explicite
+  du visiteur.
+- L'activation dynamique des scripts tiers après consentement (Google Analytics,
+  Meta Pixel, Hotjar, LinkedIn, TikTok et autres services détectés).
+- La génération automatique d'une page « Politique de cookies » sur votre site,
+  mise à jour dynamiquement à chaque activation ou désactivation d'un plugin
+  utilisant des cookies.
+- Un tableau de bord WordPress permettant de personnaliser les textes du banner,
+  la position d'affichage et la couleur principale sans modification de code.
+- La compatibilité avec les principaux thèmes WordPress (Divi 5, Elementor,
+  Gutenberg, thèmes custom) et les principaux plugins de cache (WP Rocket,
+  W3 Total Cache, WP Super Cache, LiteSpeed Cache).
+- Le stockage du consentement en localStorage avec horodatage et expiration
+  à 180 jours.
+
+---
+
+## 3. Restrictions
+
+Il vous est strictement interdit de :
+
+a) Copier, reproduire ou dupliquer le plugin en dehors de l'usage prévu
+   par cette licence.
+
+b) Redistribuer, revendre, louer, prêter, céder ou sous-licencier le plugin
+   à un tiers, à titre onéreux ou à titre gracieux, sous quelque forme que
+   ce soit.
+
+c) Modifier, adapter, traduire, décompiler, désassembler ou tenter d'extraire
+   le code source du plugin, en tout ou en partie, à des fins autres que
+   celles expressément autorisées par la loi applicable.
+
+d) Supprimer, masquer ou altérer les mentions de droits d'auteur, marques,
+   ou autres mentions de propriété présentes dans le plugin ou sa documentation.
+
+e) Utiliser le plugin pour créer un produit concurrent, un produit dérivé ou
+   tout service destiné à être distribué ou commercialisé, sans autorisation
+   écrite préalable de Websait Agency.
+
+f) Partager vos identifiants d'accès ou fichiers de téléchargement avec des
+   tiers non licenciés.
+
+---
+
+## 4. Licence multi-sites et agences
+
+Cette licence couvre un (1) site. Si vous gérez plusieurs sites pour votre
+propre compte ou pour le compte de clients, une licence est requise par site
+actif. Des formules multi-sites et des licences agence sont disponibles sur
+demande à contact@websait.com.
+
+---
+
+## 5. Mises à jour et évolutions
+
+L'achat inclut toutes les mises à jour correctives et les nouvelles
+fonctionnalités publiées dans le cadre de la version majeure acquise.
+Les nouvelles versions majeures peuvent faire l'objet d'une acquisition
+séparée à tarif préférentiel pour les licenciés existants.
+
+---
+
+## 6. Support
+
+Un support par email est inclus pendant 6 mois à compter de la date d'achat,
+à l'adresse contact@websait.com. Le support couvre l'installation, la
+configuration et les anomalies de fonctionnement du plugin dans un
+environnement WordPress standard.
+
+Le support ne couvre pas les conflits liés à des thèmes ou plugins tiers
+non répertoriés, ni les personnalisations sortant du cadre des fonctionnalités
+décrites à l'article 2.
+
+---
+
+## 7. Conformité RGPD — Avertissement important
+
+CookieRadar est conçu pour vous aider à mettre en place les mécanismes
+techniques nécessaires au recueil du consentement de vos visiteurs,
+conformément aux principes généraux du Règlement Général sur la Protection
+des Données (RGPD — Règlement UE 2016/679) et aux recommandations de la
+CNIL et des autorités de protection des données européennes.
+
+**CookieRadar ne constitue pas un avis juridique et ne garantit pas la
+conformité totale et automatique de votre site au RGPD ou à toute autre
+réglementation applicable.**
+
+La réglementation en matière de cookies et de protection des données est
+susceptible d'évoluer. Il vous appartient, en tant que responsable du
+traitement au sens du RGPD, de :
+
+- Vous tenir informé des évolutions législatives et réglementaires
+  applicables à votre situation (RGPD, loi belge du 30 juillet 2018,
+  directive ePrivacy, recommandations nationales en vigueur).
+- Vérifier que les catégories de cookies détectées par CookieRadar
+  correspondent effectivement aux cookies déposés sur votre site et
+  compléter manuellement si nécessaire.
+- Vous assurer que la base légale du traitement de chaque cookie est
+  correctement documentée.
+- Mettre à jour votre politique de confidentialité en cohérence avec
+  votre politique de cookies.
+- Consulter un professionnel du droit si votre situation le requiert.
+
+Websait Agency s'efforce de maintenir CookieRadar aligné avec les bonnes
+pratiques reconnues en matière de consentement cookies, sans pouvoir
+garantir que son utilisation suffit à elle seule à satisfaire l'ensemble
+des obligations légales applicables à votre site.
+
+---
+
+## 8. Absence de garantie
+
+CookieRadar est fourni « en l'état », sans garantie d'aucune sorte, expresse
+ou implicite, notamment sans garantie de qualité marchande, d'adéquation à
+un usage particulier ou d'absence de contrefaçon.
+
+Websait Agency ne garantit pas que le plugin fonctionnera sans interruption
+ni erreur, qu'il sera compatible avec tous les environnements d'hébergement,
+tous les thèmes ou tous les plugins tiers, ni qu'il sera exempt de
+vulnérabilités de sécurité.
+
+---
+
+## 9. Limitation de responsabilité
+
+En aucun cas Websait Agency, ses dirigeants, employés ou partenaires ne
+pourront être tenus responsables de dommages directs, indirects, accessoires,
+spéciaux ou consécutifs résultant de l'utilisation ou de l'impossibilité
+d'utiliser CookieRadar, y compris mais sans s'y limiter : pertes de données,
+pertes de revenus, amendes ou sanctions administratives, atteinte à la
+réputation, même si Websait Agency a été informée de la possibilité de tels
+dommages.
+
+La responsabilité totale de Websait Agency au titre de la présente licence
+ne pourra en aucun cas excéder le montant payé pour l'acquisition de la
+licence.
+
+---
+
+## 10. Résiliation
+
+Cette licence est automatiquement résiliée, sans préavis ni remboursement,
+en cas de violation de l'une des conditions ci-dessus. En cas de résiliation,
+vous devez immédiatement cesser toute utilisation du plugin et supprimer
+toutes les copies en votre possession, quelle qu'en soit la forme.
+
+---
+
+## 11. Droit applicable et juridiction
+
+Cette licence est régie par le droit belge. Tout litige relatif à
+l'interprétation, l'exécution ou la résiliation de cette licence sera soumis
+à la compétence exclusive des tribunaux compétents de Belgique, sans préjudice
+du droit de Websait Agency de saisir tout tribunal compétent pour obtenir
+une mesure conservatoire ou d'urgence.
+
+---
+
+## 12. Divisibilité
+
+Si une disposition de cette licence est jugée invalide ou inapplicable par
+une juridiction compétente, les autres dispositions demeurent pleinement
+en vigueur.
+
+---
+
+*CookieRadar — Plugin WordPress de gestion du consentement cookies*
+*Copyright (C) 2026 Hanane Risayindi — Websait Agency*
+*https://websait.com — contact@websait.com*
+
+## Tarif
+
+**25 € — paiement unique, mises à jour incluses.**
+
+CookieRadar s'adresse particulièrement aux solopreneurs, indépendants et petites structures
+qui veulent être conformes au RGPD sans y passer des heures et sans maîtriser les subtilités
+techniques des cookies.
+
+La plupart des plugins de consentement demandent une configuration manuelle fastidieuse :
+déclarer chaque cookie un par un, maintenir la liste à jour à chaque changement de plugin,
+rédiger soi-même la page politique.
+
+CookieRadar fait ce travail à votre place :
+
+- ✅ Détection automatique dès l'activation
+- ✅ Page politique générée et mise à jour sans intervention
+- ✅ Banner conforme RGPD opérationnel en 2 minutes
+- ✅ Zéro connaissance technique requise
+
+👉 [Obtenir CookieRadar sur websait.com](https://websait.com/cookieradar)
