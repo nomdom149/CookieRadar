@@ -534,3 +534,73 @@
   background: rgba(216, 87, 52, 0.18);
   color:      #f0997b;
 }
+/* ─── Page politique — résumé et statuts ─────────────────────────────────── */
+
+.crp-summary {
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap:                   10px;
+  margin:                20px 0 28px;
+}
+
+.crp-summary__item {
+  display:        flex;
+  flex-direction: column;
+  gap:            6px;
+  padding:        12px 14px;
+  border:         1px solid #e5e7eb;
+  border-radius:  8px;
+  background:     #fafafa;
+}
+
+.crp-summary__label {
+  font-size:   12px;
+  font-weight: 600;
+  color:       #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.crp-cat-title {
+  display:     flex;
+  align-items: center;
+  gap:         10px;
+  flex-wrap:   wrap;
+}
+
+/* Badges partagés */
+.crp-summary__badge,
+.crp-cat-badge,
+.crp-status {
+  display:       inline-block;
+  font-size:     11px;
+  font-weight:   600;
+  padding:       3px 10px;
+  border-radius: 20px;
+  transition:    background 0.25s, color 0.25s;
+}
+
+.crp-badge--pending {
+  background: #f3f4f6;
+  color:      #9ca3af;
+}
+
+.crp-badge--essential {
+  background: #e3e8ea;
+  color:      #233038;
+}
+
+.crp-badge--on {
+  background: #d1fae5;
+  color:      #065f46;
+}
+
+.crp-badge--off {
+  background: #fee2e2;
+  color:      #991b1b;
+}
+
+.crp-status-cell {
+  white-space: nowrap;
+  width:       100px;
+}

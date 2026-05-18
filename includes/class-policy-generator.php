@@ -94,6 +94,19 @@ class CookieRadar_Policy_Generator {
             </p>
             <?php endif; ?>
 
+            <!-- Résumé visuel des catégories — alimenté par JS -->
+            <div class="crp-summary" id="crp-summary">
+                <?php foreach ( $order as $cat ) : ?>
+                    <?php if ( empty( $by_category[ $cat ] ) ) continue; ?>
+                    <div class="crp-summary__item" data-category="<?php echo esc_attr( $cat ); ?>">
+                        <span class="crp-summary__label"><?php echo esc_html( $category_labels[ $cat ] ); ?></span>
+                        <span class="crp-summary__badge crp-badge--pending" id="crp-badge-<?php echo esc_attr( $cat ); ?>">
+                            <?php echo $cat === 'essential' ? 'Toujours actif' : '—'; ?>
+                        </span>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
             <h2>Qu'est-ce qu'un cookie ?</h2>
             <p>Un cookie est un petit fichier texte déposé sur votre appareil lors de votre visite
             sur un site web. Il permet au site de mémoriser vos actions et préférences sur une
@@ -104,11 +117,16 @@ class CookieRadar_Policy_Generator {
             <?php foreach ( $order as $cat ) : ?>
                 <?php if ( empty( $by_category[ $cat ] ) ) continue; ?>
 
-                <h3><?php echo esc_html( $category_labels[ $cat ] ); ?></h3>
+                <h3 class="crp-cat-title">
+                    <?php echo esc_html( $category_labels[ $cat ] ); ?>
+                    <span class="crp-cat-badge crp-badge--pending" id="crp-cat-badge-<?php echo esc_attr( $cat ); ?>">
+                        <?php echo $cat === 'essential' ? 'Toujours actif' : '—'; ?>
+                    </span>
+                </h3>
                 <p><?php echo esc_html( $category_descriptions[ $cat ] ); ?></p>
 
                 <?php foreach ( $by_category[ $cat ] as $plugin ) : ?>
-                <div class="cookieradar-policy__service">
+                <div class="cookieradar-policy__service" data-category="<?php echo esc_attr( $cat ); ?>">
                     <h4>
                         <?php echo esc_html( $plugin['label'] ); ?>
                         <span class="cookieradar-policy__provider">
@@ -125,14 +143,18 @@ class CookieRadar_Policy_Generator {
                                 <th>Nom du cookie</th>
                                 <th>Durée</th>
                                 <th>Finalité</th>
+                                <th>Statut</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ( $plugin['cookies'] as $cookie ) : ?>
-                            <tr>
+                            <tr data-category="<?php echo esc_attr( $cat ); ?>">
                                 <td><code><?php echo esc_html( $cookie['name'] ); ?></code></td>
                                 <td><?php echo esc_html( $cookie['duration'] ); ?></td>
                                 <td><?php echo esc_html( $cookie['purpose'] ); ?></td>
+                                <td class="crp-status-cell">
+                                    <span class="crp-status crp-badge--pending">—</span>
+                                </td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -156,6 +178,64 @@ class CookieRadar_Policy_Generator {
             suppression des données vous concernant. Contactez-nous via la page de contact du site.</p>
 
         </div>
+
+        <script>
+        (function() {
+            function updatePolicyStatus() {
+                try {
+                    var raw = localStorage.getItem('cookieradar_consent');
+                    if (!raw) return;
+                    var data = JSON.parse(raw);
+                    if (!data || !data.choices) return;
+                    var choices = data.choices;
+
+                    // Mettre à jour toutes les cellules statut dans les tableaux
+                    document.querySelectorAll('.cookieradar-policy__service').forEach(function(service) {
+                        var cat      = service.getAttribute('data-category');
+                        var accepted = cat === 'essential' ? true : (choices[cat] === true);
+                        var label    = cat === 'essential' ? 'Toujours actif' : (accepted ? '✓ Accepté' : '✗ Refusé');
+                        var cls      = cat === 'essential' ? 'crp-badge--essential' : (accepted ? 'crp-badge--on' : 'crp-badge--off');
+
+                        service.querySelectorAll('.crp-status').forEach(function(el) {
+                            el.textContent = label;
+                            el.className   = 'crp-status ' + cls;
+                        });
+                    });
+
+                    // Mettre à jour les badges des titres de catégorie
+                    document.querySelectorAll('[id^="crp-cat-badge-"]').forEach(function(badge) {
+                        var cat      = badge.id.replace('crp-cat-badge-', '');
+                        var accepted = cat === 'essential' ? true : (choices[cat] === true);
+                        var label    = cat === 'essential' ? 'Toujours actif' : (accepted ? '✓ Accepté' : '✗ Refusé');
+                        var cls      = cat === 'essential' ? 'crp-badge--essential' : (accepted ? 'crp-badge--on' : 'crp-badge--off');
+                        badge.textContent = label;
+                        badge.className   = 'crp-cat-badge ' + cls;
+                    });
+
+                    // Mettre à jour le résumé en haut
+                    document.querySelectorAll('[id^="crp-badge-"]').forEach(function(badge) {
+                        var cat      = badge.id.replace('crp-badge-', '');
+                        var accepted = cat === 'essential' ? true : (choices[cat] === true);
+                        var label    = cat === 'essential' ? 'Toujours actif' : (accepted ? '✓ Accepté' : '✗ Refusé');
+                        var cls      = cat === 'essential' ? 'crp-badge--essential' : (accepted ? 'crp-badge--on' : 'crp-badge--off');
+                        badge.textContent = label;
+                        badge.className   = 'crp-summary__badge ' + cls;
+                    });
+
+                } catch(e) {}
+            }
+
+            // Lancer au chargement
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', updatePolicyStatus);
+            } else {
+                updatePolicyStatus();
+            }
+
+            // Mettre à jour si le consentement change pendant la visite
+            document.addEventListener('cookieradar:consent', updatePolicyStatus);
+        })();
+        </script>
         <?php
         return ob_get_clean();
     }
