@@ -85,7 +85,15 @@
     });
   }
 
-  // ─── Moteur de détection principal ────────────────────────────────────────
+  // ─── Moteur de détection principal — système de score ────────────────────
+  // Chaque type de correspondance rapporte des points :
+  //   script src  = 3 points (très fiable)
+  //   cookie      = 3 points (très fiable)
+  //   pattern     = 2 points (fiable)
+  //   global JS   = 1 point  (peu fiable seul — trop de faux positifs)
+  // Seuil minimum : 3 points pour valider la détection
+
+  var SCORE_THRESHOLD = 3;
 
   function scan() {
     var cookies      = getCookies();
@@ -96,37 +104,43 @@
     Object.keys(signatures).forEach(function(key) {
       var sig    = signatures[key];
       var detect = sig.detect || {};
-      var found  = false;
+      var score  = 0;
 
-      // 1. Variables globales JavaScript
-      if (!found && detect.globals) {
-        found = detect.globals.some(function(g) {
-          return globalExists(g);
-        });
-      }
-
-      // 2. URLs de scripts chargés
-      if (!found && detect.scripts) {
-        found = detect.scripts.some(function(s) {
+      // Scripts chargés — 3 points (signature la plus fiable)
+      if (detect.scripts) {
+        var scriptHit = detect.scripts.some(function(s) {
           return scriptMatches(s, scriptSrcs);
         });
+        if (scriptHit) score += 3;
       }
 
-      // 3. Cookies présents dans le navigateur
-      if (!found && detect.cookies) {
-        found = detect.cookies.some(function(c) {
+      // Cookies présents — 3 points (preuve directe)
+      if (detect.cookies) {
+        var cookieHit = detect.cookies.some(function(c) {
           return cookieMatches(c, cookies);
         });
+        if (cookieHit) score += 3;
       }
 
-      // 4. Patterns regex dans le code inline
-      if (!found && detect.patterns) {
-        found = detect.patterns.some(function(p) {
+      // Patterns inline — 2 points (code spécifique détecté)
+      if (detect.patterns) {
+        var patternHit = detect.patterns.some(function(p) {
           return matchPattern(p, inlineCode);
         });
+        if (patternHit) score += 2;
       }
 
-      if (found) {
+      // Variables globales — 1 point seulement (trop génériques seules)
+      // Ex: window.google présent sur tout site avec Google Fonts
+      if (detect.globals) {
+        var globalHit = detect.globals.some(function(g) {
+          return globalExists(g);
+        });
+        if (globalHit) score += 1;
+      }
+
+      // Validation : score minimum requis pour confirmer la détection
+      if (score >= SCORE_THRESHOLD) {
         detected.push({
           key:         key,
           label:       sig.label       || key,
@@ -134,9 +148,13 @@
           provider:    sig.provider    || '',
           privacy_url: sig.privacy_url || '',
           cookies:     sig.cookies     || [],
+          score:       score,
         });
       }
     });
+
+    // Trier par score décroissant
+    detected.sort(function(a, b) { return b.score - a.score; });
 
     return detected;
   }

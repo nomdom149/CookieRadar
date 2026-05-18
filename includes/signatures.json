@@ -29,10 +29,10 @@
         { "name": "_gcl_*", "duration": "3 mois", "purpose": "Google Consent Mode via GTM" }
       ],
       "detect": {
-        "globals":  ["dataLayer", "google_tag_manager"],
+        "globals":  ["google_tag_manager"],
         "scripts":  ["googletagmanager.com/gtm.js"],
         "cookies":  ["_gcl_au"],
-        "patterns": ["GTM-[A-Z0-9]{6,}"]
+        "patterns": ["GTM-[A-Z0-9]{6,}", "googletagmanager\\.com/gtm\\.js"]
       }
     },
 
@@ -281,10 +281,10 @@
         { "name": "SOCS", "duration": "13 mois", "purpose": "Préférences consentement Google" }
       ],
       "detect": {
-        "globals":  ["google", "initMap"],
+        "globals":  ["google.maps"],
         "scripts":  ["maps.googleapis.com/maps/api/js"],
         "cookies":  ["NID", "SOCS", "1P_JAR"],
-        "patterns": ["maps\\.googleapis\\.com", "maps\\.google\\.com/maps"]
+        "patterns": ["maps\\.googleapis\\.com/maps/api/js", "new google\\.maps\\.Map"]
       }
     },
 
