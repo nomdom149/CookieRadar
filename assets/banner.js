@@ -186,10 +186,39 @@
   }
 
   function hideBanner() {
-    var b = getBanner();
-    var o = getOverlay();
-    if (b) b.classList.add('cr-banner--hidden');
-    if (o) o.classList.remove('cr-overlay--visible');
+    // Suppression complète du DOM — évite tout freeze résiduel de l'overlay
+    var wrap = document.getElementById('cr-banner-wrap');
+    var ov   = getOverlay();
+    if (ov)   ov.classList.remove('cr-overlay--visible');
+    if (wrap) {
+      wrap.remove();
+    } else {
+      var b = getBanner();
+      if (b) b.remove();
+    }
+  }
+
+  // Synchronise les toggles avec les choix déjà sauvegardés
+  function syncToggles(choices) {
+    if (!choices) return;
+    document.querySelectorAll('#cr-banner .cr-toggle-row').forEach(function(row) {
+      var cat    = row.getAttribute('data-category');
+      var toggle = row.querySelector('.cr-toggle');
+      if (!cat || !toggle || toggle.disabled) return;
+
+      var accepted = choices[cat] === true;
+      toggle.setAttribute('aria-checked', accepted ? 'true' : 'false');
+      toggle.classList.toggle('cr-toggle--on',  accepted);
+      toggle.classList.toggle('cr-toggle--off', !accepted);
+
+      // Badge d'état visible sur chaque ligne
+      var old = row.querySelector('.cr-status-badge');
+      if (old) old.remove();
+      var badge = document.createElement('span');
+      badge.className  = 'cr-status-badge cr-status-badge--' + (accepted ? 'on' : 'off');
+      badge.textContent = accepted ? '✓ Accepté' : '✗ Refusé';
+      row.querySelector('.cr-toggle-info').appendChild(badge);
+    });
   }
 
   function showBar() {
@@ -210,6 +239,13 @@
     if (modal) modal.classList.remove('cr-view--hidden');
     if (ov)    ov.classList.add('cr-overlay--visible');
     showBanner();
+
+    // Appliquer l'état sauvegardé aux toggles dès l'ouverture
+    var existing = loadConsent();
+    if (existing && existing.choices) {
+      syncToggles(existing.choices);
+    }
+
     setTimeout(function() {
       var first = modal && modal.querySelector('button:not([disabled])');
       if (first) first.focus();
@@ -259,14 +295,26 @@
       hideBanner();
     });
 
-    // Toggles individuels
+    // Toggles individuels — mise à jour visuelle immédiate
     var toggles = document.querySelectorAll('#cr-banner .cr-toggle:not([disabled])');
     toggles.forEach(function(t) {
       t.addEventListener('click', function() {
         var checked = t.getAttribute('aria-checked') === 'true';
-        t.setAttribute('aria-checked', checked ? 'false' : 'true');
-        t.classList.toggle('cr-toggle--on',   !checked);
-        t.classList.toggle('cr-toggle--off',   checked);
+        var newVal  = !checked;
+        t.setAttribute('aria-checked', newVal ? 'true' : 'false');
+        t.classList.toggle('cr-toggle--on',  newVal);
+        t.classList.toggle('cr-toggle--off', !newVal);
+
+        // Mettre à jour le badge d'état sur la ligne
+        var row   = t.closest('.cr-toggle-row');
+        var old   = row && row.querySelector('.cr-status-badge');
+        if (old) old.remove();
+        if (row) {
+          var badge = document.createElement('span');
+          badge.className   = 'cr-status-badge cr-status-badge--' + (newVal ? 'on' : 'off');
+          badge.textContent = newVal ? '✓ Accepté' : '✗ Refusé';
+          row.querySelector('.cr-toggle-info').appendChild(badge);
+        }
       });
     });
 
