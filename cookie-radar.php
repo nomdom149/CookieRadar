@@ -22,6 +22,7 @@ define( 'COOKIERADAR_URL',     plugin_dir_url( __FILE__ ) );
 require_once COOKIERADAR_PATH . 'includes/class-scanner.php';
 require_once COOKIERADAR_PATH . 'includes/class-policy-generator.php';
 require_once COOKIERADAR_PATH . 'includes/class-admin.php';
+require_once COOKIERADAR_PATH . 'includes/class-ajax.php';
 
 register_activation_hook( __FILE__, array( 'CookieRadar_Admin', 'activate' ) );
 register_deactivation_hook( __FILE__, array( 'CookieRadar_Admin', 'deactivate' ) );
@@ -32,6 +33,7 @@ function cookieradar_init() {
     CookieRadar_Scanner::init();
     CookieRadar_Policy_Generator::init();
     CookieRadar_Admin::init();
+    CookieRadar_Ajax::init();
 }
 
 add_action( 'wp_enqueue_scripts', 'cookieradar_enqueue_front' );
@@ -48,7 +50,14 @@ function cookieradar_enqueue_front() {
         COOKIERADAR_URL . 'assets/banner.js',
         array(),
         COOKIERADAR_VERSION,
-        false
+        true
+    );
+    wp_enqueue_script(
+        'cookie-radar-scanner',
+        COOKIERADAR_URL . 'assets/scanner.js',
+        array(),
+        COOKIERADAR_VERSION,
+        true
     );
 
     $categories = CookieRadar_Scanner::get_detected_categories();
@@ -67,6 +76,22 @@ function cookieradar_enqueue_front() {
             'settings'    => get_option( 'cookieradar_text_settings', 'Personnaliser' ),
             'policyLink'  => get_option( 'cookieradar_text_policy',   'Politique cookies' ),
         ),
+    ) );
+
+    // Config du scanner JS — signatures + nonce AJAX
+    $signatures_path = COOKIERADAR_PATH . 'includes/signatures.json';
+    $signatures      = array();
+    if ( file_exists( $signatures_path ) ) {
+        $raw        = file_get_contents( $signatures_path );
+        $data       = json_decode( $raw, true );
+        $signatures = isset( $data['signatures'] ) ? $data['signatures'] : array();
+    }
+
+    wp_localize_script( 'cookie-radar-scanner', 'CookieRadarScannerConfig', array(
+        'signatures' => $signatures,
+        'ajaxUrl'    => admin_url( 'admin-ajax.php' ),
+        'nonce'      => wp_create_nonce( 'cookieradar_scan_nonce' ),
+        'isAdmin'    => false,
     ) );
 }
 

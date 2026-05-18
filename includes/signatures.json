@@ -1,0 +1,324 @@
+{
+  "version": "1.0.0",
+  "signatures": {
+
+    "google-analytics": {
+      "label": "Google Analytics / GA4",
+      "category": "analytics",
+      "provider": "Google LLC",
+      "privacy_url": "https://policies.google.com/privacy",
+      "cookies": [
+        { "name": "_ga",   "duration": "2 ans",     "purpose": "Identifiant utilisateur Google Analytics" },
+        { "name": "_gid",  "duration": "24 heures", "purpose": "Identifiant session Google Analytics" },
+        { "name": "_ga_*", "duration": "2 ans",     "purpose": "État de session GA4" }
+      ],
+      "detect": {
+        "globals":  ["gtag", "ga", "GoogleAnalyticsObject"],
+        "scripts":  ["google-analytics.com/analytics.js", "googletagmanager.com/gtag/js", "google-analytics.com/ga.js"],
+        "cookies":  ["_ga", "_gid", "_gat"],
+        "patterns": ["gtag\\('config'", "ga\\('create'", "G-[A-Z0-9]{8,}"]
+      }
+    },
+
+    "google-tag-manager": {
+      "label": "Google Tag Manager",
+      "category": "functional",
+      "provider": "Google LLC",
+      "privacy_url": "https://policies.google.com/privacy",
+      "cookies": [
+        { "name": "_gcl_*", "duration": "3 mois", "purpose": "Google Consent Mode via GTM" }
+      ],
+      "detect": {
+        "globals":  ["dataLayer", "google_tag_manager"],
+        "scripts":  ["googletagmanager.com/gtm.js"],
+        "cookies":  ["_gcl_au"],
+        "patterns": ["GTM-[A-Z0-9]{6,}"]
+      }
+    },
+
+    "meta-pixel": {
+      "label": "Meta Pixel (Facebook)",
+      "category": "marketing",
+      "provider": "Meta Platforms Inc.",
+      "privacy_url": "https://www.facebook.com/privacy/policy",
+      "cookies": [
+        { "name": "_fbp", "duration": "3 mois", "purpose": "Identifiant navigateur Meta Pixel" },
+        { "name": "_fbc", "duration": "2 ans",  "purpose": "Dernier clic publicitaire Facebook" }
+      ],
+      "detect": {
+        "globals":  ["fbq", "_fbq"],
+        "scripts":  ["connect.facebook.net/en_US/fbevents.js", "connect.facebook.net/fr_FR/fbevents.js"],
+        "cookies":  ["_fbp", "_fbc"],
+        "patterns": ["fbq\\('init'", "facebook\\.net.*fbevents"]
+      }
+    },
+
+    "hotjar": {
+      "label": "Hotjar",
+      "category": "analytics",
+      "provider": "Hotjar Ltd.",
+      "privacy_url": "https://www.hotjar.com/legal/policies/privacy",
+      "cookies": [
+        { "name": "_hjSessionUser_*", "duration": "1 an",       "purpose": "Identifiant visiteur Hotjar" },
+        { "name": "_hjSession_*",     "duration": "30 minutes", "purpose": "Session Hotjar en cours" }
+      ],
+      "detect": {
+        "globals":  ["hj", "_hjSettings"],
+        "scripts":  ["static.hotjar.com/c/hotjar-"],
+        "cookies":  ["_hjSessionUser_", "_hjSession_", "_hjFirstSeen"],
+        "patterns": ["_hjSettings\\s*=", "hjid\\s*:", "static\\.hotjar\\.com"]
+      }
+    },
+
+    "microsoft-clarity": {
+      "label": "Microsoft Clarity",
+      "category": "analytics",
+      "provider": "Microsoft Corporation",
+      "privacy_url": "https://privacy.microsoft.com/privacystatement",
+      "cookies": [
+        { "name": "_clck", "duration": "1 an",   "purpose": "Identifiant utilisateur Clarity" },
+        { "name": "_clsk", "duration": "1 jour", "purpose": "Session Microsoft Clarity" }
+      ],
+      "detect": {
+        "globals":  ["clarity"],
+        "scripts":  ["clarity.ms/tag/"],
+        "cookies":  ["_clck", "_clsk", "CLID"],
+        "patterns": ["clarity\\('set'", "clarity\\.ms/tag"]
+      }
+    },
+
+    "tiktok-pixel": {
+      "label": "TikTok Pixel",
+      "category": "marketing",
+      "provider": "TikTok Inc.",
+      "privacy_url": "https://www.tiktok.com/legal/privacy-policy",
+      "cookies": [
+        { "name": "_ttp", "duration": "13 mois", "purpose": "Suivi conversions TikTok Ads" }
+      ],
+      "detect": {
+        "globals":  ["ttq", "TiktokAnalyticsObject"],
+        "scripts":  ["analytics.tiktok.com/i18n/pixel/events.js"],
+        "cookies":  ["_ttp", "tt_appInfo"],
+        "patterns": ["ttq\\.load\\(", "analytics\\.tiktok\\.com"]
+      }
+    },
+
+    "linkedin-insight": {
+      "label": "LinkedIn Insight Tag",
+      "category": "marketing",
+      "provider": "LinkedIn Corporation",
+      "privacy_url": "https://www.linkedin.com/legal/privacy-policy",
+      "cookies": [
+        { "name": "li_fat_id",        "duration": "30 jours", "purpose": "Suivi conversions LinkedIn" },
+        { "name": "UserMatchHistory", "duration": "30 jours", "purpose": "Audiences LinkedIn" }
+      ],
+      "detect": {
+        "globals":  ["_linkedin_data_partner_ids", "_linkedin_partner_id"],
+        "scripts":  ["snap.licdn.com/li.lms-analytics/insight.min.js"],
+        "cookies":  ["li_fat_id", "UserMatchHistory", "bcookie"],
+        "patterns": ["_linkedin_partner_id\\s*=", "snap\\.licdn\\.com"]
+      }
+    },
+
+    "google-ads": {
+      "label": "Google Ads",
+      "category": "marketing",
+      "provider": "Google LLC",
+      "privacy_url": "https://policies.google.com/privacy",
+      "cookies": [
+        { "name": "_gcl_au", "duration": "3 mois",  "purpose": "Suivi conversions Google Ads" },
+        { "name": "IDE",     "duration": "13 mois", "purpose": "Publicité ciblée Google" }
+      ],
+      "detect": {
+        "globals":  ["google_conversion_id", "google_remarketing_only"],
+        "scripts":  ["googleadservices.com/pagead/conversion", "pagead2.googlesyndication.com"],
+        "cookies":  ["_gcl_au", "_gcl_aw", "IDE"],
+        "patterns": ["AW-[0-9]{8,}", "google_conversion_id\\s*=", "googleadservices\\.com"]
+      }
+    },
+
+    "pinterest": {
+      "label": "Pinterest Tag",
+      "category": "marketing",
+      "provider": "Pinterest Inc.",
+      "privacy_url": "https://policy.pinterest.com/privacy-policy",
+      "cookies": [
+        { "name": "_pinterest_ct_ua", "duration": "1 an", "purpose": "Suivi conversions Pinterest" }
+      ],
+      "detect": {
+        "globals":  ["pintrk"],
+        "scripts":  ["s.pinimg.com/ct/core.js"],
+        "cookies":  ["_pinterest_ct_ua", "_pin_unauth"],
+        "patterns": ["pintrk\\('load'", "s\\.pinimg\\.com"]
+      }
+    },
+
+    "hubspot": {
+      "label": "HubSpot",
+      "category": "marketing",
+      "provider": "HubSpot Inc.",
+      "privacy_url": "https://legal.hubspot.com/privacy-policy",
+      "cookies": [
+        { "name": "__hstc",     "duration": "13 mois", "purpose": "Suivi visiteur HubSpot" },
+        { "name": "hubspotutk", "duration": "13 mois", "purpose": "Identifiant visiteur HubSpot" }
+      ],
+      "detect": {
+        "globals":  ["_hsq", "HubSpotConversations"],
+        "scripts":  ["js.hs-scripts.com", "js.hsforms.net", "js.hubspot.com"],
+        "cookies":  ["__hstc", "hubspotutk", "__hssc"],
+        "patterns": ["hs-scripts\\.com", "_hsq\\.push"]
+      }
+    },
+
+    "intercom": {
+      "label": "Intercom",
+      "category": "functional",
+      "provider": "Intercom Inc.",
+      "privacy_url": "https://www.intercom.com/legal/privacy",
+      "cookies": [
+        { "name": "intercom-id-*",      "duration": "9 mois",    "purpose": "Identifiant visiteur Intercom" },
+        { "name": "intercom-session-*", "duration": "1 semaine", "purpose": "Session Intercom" }
+      ],
+      "detect": {
+        "globals":  ["Intercom", "intercomSettings"],
+        "scripts":  ["widget.intercom.io/widget/"],
+        "cookies":  ["intercom-id-", "intercom-session-"],
+        "patterns": ["Intercom\\('boot'", "widget\\.intercom\\.io"]
+      }
+    },
+
+    "crisp": {
+      "label": "Crisp Chat",
+      "category": "functional",
+      "provider": "Crisp IM SAS",
+      "privacy_url": "https://crisp.chat/en/privacy",
+      "cookies": [
+        { "name": "crisp-client%2Fsession%2F*", "duration": "6 mois", "purpose": "Session chat Crisp" }
+      ],
+      "detect": {
+        "globals":  ["$crisp", "CRISP_WEBSITE_ID"],
+        "scripts":  ["client.crisp.chat/l.js"],
+        "cookies":  ["crisp-client"],
+        "patterns": ["CRISP_WEBSITE_ID\\s*=", "client\\.crisp\\.chat"]
+      }
+    },
+
+    "tidio": {
+      "label": "Tidio Live Chat",
+      "category": "functional",
+      "provider": "Tidio LLC",
+      "privacy_url": "https://www.tidio.com/privacy-policy/",
+      "cookies": [
+        { "name": "tidio_state",     "duration": "1 an", "purpose": "État widget Tidio" },
+        { "name": "tidio_visitor_*", "duration": "1 an", "purpose": "Identifiant visiteur Tidio" }
+      ],
+      "detect": {
+        "globals":  ["tidioChatApi", "tidioIdentify"],
+        "scripts":  ["code.tidio.co/"],
+        "cookies":  ["tidio_state", "tidio_visitor_"],
+        "patterns": ["code\\.tidio\\.co", "tidioChatApi"]
+      }
+    },
+
+    "youtube": {
+      "label": "YouTube (vidéos intégrées)",
+      "category": "marketing",
+      "provider": "Google LLC / YouTube",
+      "privacy_url": "https://policies.google.com/privacy",
+      "cookies": [
+        { "name": "YSC",                "duration": "Session", "purpose": "Suivi vidéos YouTube" },
+        { "name": "VISITOR_INFO1_LIVE", "duration": "6 mois",  "purpose": "Estimation bande passante YouTube" }
+      ],
+      "detect": {
+        "globals":  ["YT", "onYouTubeIframeAPIReady"],
+        "scripts":  ["youtube.com/iframe_api", "youtube.com/embed/"],
+        "cookies":  ["YSC", "VISITOR_INFO1_LIVE", "GPS"],
+        "patterns": ["youtube\\.com/embed/", "youtube\\.com/iframe_api", "youtu\\.be/"]
+      }
+    },
+
+    "stripe": {
+      "label": "Stripe",
+      "category": "functional",
+      "provider": "Stripe Inc.",
+      "privacy_url": "https://stripe.com/privacy",
+      "cookies": [
+        { "name": "__stripe_mid", "duration": "1 an",       "purpose": "Prévention fraude Stripe" },
+        { "name": "__stripe_sid", "duration": "30 minutes", "purpose": "Session paiement Stripe" }
+      ],
+      "detect": {
+        "globals":  ["Stripe"],
+        "scripts":  ["js.stripe.com/v3/", "js.stripe.com/v2/"],
+        "cookies":  ["__stripe_mid", "__stripe_sid"],
+        "patterns": ["js\\.stripe\\.com", "Stripe\\("]
+      }
+    },
+
+    "paypal": {
+      "label": "PayPal",
+      "category": "functional",
+      "provider": "PayPal Inc.",
+      "privacy_url": "https://www.paypal.com/privacy",
+      "cookies": [
+        { "name": "PYPF", "duration": "1 an",  "purpose": "Prévention fraude PayPal" },
+        { "name": "ts",   "duration": "3 ans", "purpose": "Sécurité transaction PayPal" }
+      ],
+      "detect": {
+        "globals":  ["paypal", "PAYPAL"],
+        "scripts":  ["paypal.com/sdk/js", "paypalobjects.com"],
+        "cookies":  ["PYPF", "ts", "nsid"],
+        "patterns": ["paypal\\.com/sdk/js", "paypal\\.Buttons"]
+      }
+    },
+
+    "google-maps": {
+      "label": "Google Maps",
+      "category": "functional",
+      "provider": "Google LLC",
+      "privacy_url": "https://policies.google.com/privacy",
+      "cookies": [
+        { "name": "NID",  "duration": "6 mois",  "purpose": "Personnalisation Google Maps" },
+        { "name": "SOCS", "duration": "13 mois", "purpose": "Préférences consentement Google" }
+      ],
+      "detect": {
+        "globals":  ["google", "initMap"],
+        "scripts":  ["maps.googleapis.com/maps/api/js"],
+        "cookies":  ["NID", "SOCS", "1P_JAR"],
+        "patterns": ["maps\\.googleapis\\.com", "maps\\.google\\.com/maps"]
+      }
+    },
+
+    "brevo": {
+      "label": "Brevo (ex Sendinblue)",
+      "category": "marketing",
+      "provider": "Brevo SAS",
+      "privacy_url": "https://www.brevo.com/legal/privacypolicy/",
+      "cookies": [
+        { "name": "sib_cuid", "duration": "13 mois", "purpose": "Identifiant contact Brevo" }
+      ],
+      "detect": {
+        "globals":  ["sib", "sendinblue"],
+        "scripts":  ["sibautomation.com/sa.js"],
+        "cookies":  ["sib_cuid", "__sib_cuid"],
+        "patterns": ["sibautomation\\.com", "sib\\.push"]
+      }
+    },
+
+    "activecampaign": {
+      "label": "ActiveCampaign",
+      "category": "marketing",
+      "provider": "ActiveCampaign LLC",
+      "privacy_url": "https://www.activecampaign.com/privacy-policy/",
+      "cookies": [
+        { "name": "__actc", "duration": "1 an", "purpose": "Suivi visites ActiveCampaign" }
+      ],
+      "detect": {
+        "globals":  ["vgo", "ActiveCampaign"],
+        "scripts":  ["trackcmp.net/"],
+        "cookies":  ["__actc", "ac_enable_tracking"],
+        "patterns": ["trackcmp\\.net", "vgo\\('setAccount'"]
+      }
+    }
+
+  }
+}
