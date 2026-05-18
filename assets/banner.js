@@ -313,10 +313,20 @@
     });
 
     // ── Bouton : Personnaliser
-    document.getElementById('cr-btn-settings').addEventListener('click', showSettings);
+const btnSettings = document.getElementById('cr-btn-settings');
+if (btnSettings) {
+  btnSettings.addEventListener('click', function() {
+    showSettings();
+  });
+}
 
     // ── Bouton : Fermer modal → retour à la barre
-    document.getElementById('cr-btn-close').addEventListener('click', showBar);
+const btnClose = document.getElementById('cr-btn-close');
+if (btnClose) {
+  btnClose.addEventListener('click', function() {
+    showBar();
+  });
+}
 
     // ── Bouton : Tout accepter (modal)
     document.getElementById('cr-btn-accept-all-modal').addEventListener('click', function () {
