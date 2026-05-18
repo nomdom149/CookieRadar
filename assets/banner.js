@@ -1,4 +1,7 @@
 /* global CookieRadarConfig */
+console.log('CookieRadar banner.js chargé', window.CookieRadarConfig);
+
+/* global CookieRadarConfig */
 (function () {
   'use strict';
 
