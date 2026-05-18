@@ -1,93 +1,142 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "last_updated": "2026-05-18",
   "plugins": {
+
     "google-analytics": {
-      "names": [
-        "google-analytics-for-wordpress",
-        "googleanalytics",
-        "ga-google-analytics",
-        "gtm4wp",
-        "google-tag-manager"
-      ],
-      "label": "Google Analytics",
+      "names": ["google-analytics-for-wordpress", "googleanalytics", "ga-google-analytics", "gtm4wp", "google-tag-manager", "google-site-kit", "analytify", "wp-google-analytics-events", "burst-statistics"],
+      "label": "Google Analytics / GA4",
       "category": "analytics",
       "cookies": [
-        { "name": "_ga",    "duration": "2 ans",    "purpose": "Distingue les utilisateurs et les sessions" },
-        { "name": "_gid",   "duration": "24 heures","purpose": "Distingue les utilisateurs" },
-        { "name": "_gat",   "duration": "1 minute", "purpose": "Limite le taux de requêtes" },
-        { "name": "_ga_*",  "duration": "2 ans",    "purpose": "Maintient l'état de session (GA4)" }
+        { "name": "_ga",      "duration": "2 ans",     "purpose": "Distingue les utilisateurs et les sessions" },
+        { "name": "_gid",     "duration": "24 heures", "purpose": "Distingue les utilisateurs" },
+        { "name": "_gat",     "duration": "1 minute",  "purpose": "Limite le taux de requêtes" },
+        { "name": "_ga_*",    "duration": "2 ans",     "purpose": "Maintient l'état de session (GA4)" },
+        { "name": "_gac_*",   "duration": "3 mois",    "purpose": "Informations campagne publicitaire" }
       ],
       "provider": "Google LLC",
       "privacy_url": "https://policies.google.com/privacy"
     },
-    "meta-pixel": {
-      "names": [
-        "official-facebook-pixel",
-        "pixel-caffeine",
-        "facebook-for-woocommerce"
-      ],
-      "label": "Meta Pixel (Facebook)",
-      "category": "marketing",
-      "cookies": [
-        { "name": "_fbp",  "duration": "3 mois",   "purpose": "Identifie les navigateurs pour la publicité Meta" },
-        { "name": "_fbc",  "duration": "2 ans",    "purpose": "Stocke le dernier clic publicitaire Facebook" },
-        { "name": "fr",    "duration": "3 mois",   "purpose": "Publicité ciblée Facebook" }
-      ],
-      "provider": "Meta Platforms Inc.",
-      "privacy_url": "https://www.facebook.com/privacy/policy"
-    },
-    "hotjar": {
-      "names": [
-        "hotjar",
-        "hotjar-connect"
-      ],
-      "label": "Hotjar",
-      "category": "analytics",
-      "cookies": [
-        { "name": "_hjSessionUser_*", "duration": "1 an",      "purpose": "Identifie un utilisateur unique à la première visite" },
-        { "name": "_hjSession_*",     "duration": "30 minutes","purpose": "Données de session en cours" },
-        { "name": "_hjAbsoluteSessionInProgress", "duration": "30 minutes", "purpose": "Détecte la première session de navigation" },
-        { "name": "_hjFirstSeen",     "duration": "30 minutes","purpose": "Identifie les nouveaux utilisateurs" }
-      ],
-      "provider": "Hotjar Ltd.",
-      "privacy_url": "https://www.hotjar.com/legal/policies/privacy"
-    },
-    "woocommerce": {
-      "names": [
-        "woocommerce"
-      ],
-      "label": "WooCommerce",
+
+    "rank-math": {
+      "names": ["seo-by-rank-math", "seo-by-rank-math-pro", "rank-math-pro"],
+      "label": "Rank Math SEO",
       "category": "functional",
       "cookies": [
-        { "name": "woocommerce_cart_hash",       "duration": "Session",  "purpose": "Identifie le contenu du panier" },
-        { "name": "woocommerce_items_in_cart",   "duration": "Session",  "purpose": "Indique si le panier contient des articles" },
-        { "name": "wp_woocommerce_session_*",    "duration": "2 jours",  "purpose": "Stocke les données de session WooCommerce" },
-        { "name": "woocommerce_recently_viewed", "duration": "Session",  "purpose": "Produits récemment consultés" }
+        { "name": "rankMath_*",      "duration": "Session",  "purpose": "Données de session Rank Math" },
+        { "name": "rank_math_*",     "duration": "Session",  "purpose": "Préférences SEO et analyse interne" },
+        { "name": "rmt_*",           "duration": "1 an",     "purpose": "Suivi interne Rank Math Analytics" }
       ],
-      "provider": "Automattic Inc.",
-      "privacy_url": "https://automattic.com/privacy"
+      "provider": "Rank Math (ONE.COM INDIA PRIVATE LIMITED)",
+      "privacy_url": "https://rankmath.com/privacy-policy/"
     },
+
     "yoast-seo": {
-      "names": [
-        "wordpress-seo",
-        "wordpress-seo-premium"
-      ],
+      "names": ["wordpress-seo", "wordpress-seo-premium"],
       "label": "Yoast SEO",
       "category": "functional",
       "cookies": [
-        { "name": "_ym_uid",  "duration": "1 an",  "purpose": "Identifiant utilisateur Yoast" },
-        { "name": "_ym_d",    "duration": "1 an",  "purpose": "Date de première visite" }
+        { "name": "_ym_uid",         "duration": "1 an",  "purpose": "Identifiant utilisateur Yoast" },
+        { "name": "_ym_d",           "duration": "1 an",  "purpose": "Date de première visite" }
       ],
       "provider": "Yoast BV",
       "privacy_url": "https://yoast.com/privacy-policy"
     },
-    "mailchimp": {
-      "names": [
-        "mailchimp-for-wp",
-        "mc4wp-premium",
-        "mailchimp-woocommerce"
+
+    "all-in-one-seo": {
+      "names": ["all-in-one-seo-pack", "aioseo"],
+      "label": "All in One SEO",
+      "category": "functional",
+      "cookies": [
+        { "name": "aioseo_*",        "duration": "Session", "purpose": "Données de session All in One SEO" }
       ],
+      "provider": "Awesome Motive",
+      "privacy_url": "https://aioseo.com/privacy-policy/"
+    },
+
+    "elementor": {
+      "names": ["elementor", "elementor-pro"],
+      "label": "Elementor",
+      "category": "functional",
+      "cookies": [
+        { "name": "elementor",         "duration": "Session",  "purpose": "Session éditeur Elementor (admin uniquement)" },
+        { "name": "elementor_library", "duration": "Session",  "purpose": "Bibliothèque de modèles Elementor" }
+      ],
+      "provider": "Elementor Ltd.",
+      "privacy_url": "https://elementor.com/privacy-policy/"
+    },
+
+    "divi": {
+      "names": ["divi-builder", "extra"],
+      "label": "Divi / Divi Builder",
+      "category": "functional",
+      "cookies": [
+        { "name": "et_pb_ab_*",            "duration": "Session", "purpose": "Test A/B Divi — suivi de variante" },
+        { "name": "et_pb_pagebuilder_*",   "duration": "Session", "purpose": "Données session constructeur de page Divi" },
+        { "name": "et_pb_preview_*",       "duration": "Session", "purpose": "Mode prévisualisation Divi" }
+      ],
+      "provider": "Elegant Themes",
+      "privacy_url": "https://www.elegantthemes.com/privacy-policy/"
+    },
+
+    "woocommerce": {
+      "names": ["woocommerce"],
+      "label": "WooCommerce",
+      "category": "functional",
+      "cookies": [
+        { "name": "woocommerce_cart_hash",       "duration": "Session", "purpose": "Identifie le contenu du panier" },
+        { "name": "woocommerce_items_in_cart",   "duration": "Session", "purpose": "Indique si le panier contient des articles" },
+        { "name": "wp_woocommerce_session_*",    "duration": "2 jours", "purpose": "Stocke les données de session WooCommerce" },
+        { "name": "woocommerce_recently_viewed", "duration": "Session", "purpose": "Produits récemment consultés" },
+        { "name": "store_notice*",               "duration": "Session", "purpose": "Fermeture de la notice boutique" }
+      ],
+      "provider": "Automattic Inc.",
+      "privacy_url": "https://automattic.com/privacy"
+    },
+
+    "meta-pixel": {
+      "names": ["official-facebook-pixel", "pixel-caffeine", "facebook-for-woocommerce", "meta-pixel"],
+      "label": "Meta Pixel (Facebook)",
+      "category": "marketing",
+      "cookies": [
+        { "name": "_fbp",  "duration": "3 mois", "purpose": "Identifie les navigateurs pour la publicité Meta" },
+        { "name": "_fbc",  "duration": "2 ans",  "purpose": "Stocke le dernier clic publicitaire Facebook" },
+        { "name": "fr",    "duration": "3 mois", "purpose": "Publicité ciblée Facebook" }
+      ],
+      "provider": "Meta Platforms Inc.",
+      "privacy_url": "https://www.facebook.com/privacy/policy"
+    },
+
+    "hotjar": {
+      "names": ["hotjar", "hotjar-connect"],
+      "label": "Hotjar",
+      "category": "analytics",
+      "cookies": [
+        { "name": "_hjSessionUser_*",              "duration": "1 an",       "purpose": "Identifie un utilisateur unique à la première visite" },
+        { "name": "_hjSession_*",                  "duration": "30 minutes", "purpose": "Données de session en cours" },
+        { "name": "_hjAbsoluteSessionInProgress",  "duration": "30 minutes", "purpose": "Détecte la première session de navigation" },
+        { "name": "_hjFirstSeen",                  "duration": "30 minutes", "purpose": "Identifie les nouveaux utilisateurs" }
+      ],
+      "provider": "Hotjar Ltd.",
+      "privacy_url": "https://www.hotjar.com/legal/policies/privacy"
+    },
+
+    "jetpack": {
+      "names": ["jetpack", "jetpack-boost"],
+      "label": "Jetpack",
+      "category": "functional",
+      "cookies": [
+        { "name": "jetpackState",     "duration": "Session", "purpose": "État de session Jetpack" },
+        { "name": "jpp_*",            "duration": "1 an",    "purpose": "Préférences Jetpack" },
+        { "name": "__utmz",           "duration": "6 mois",  "purpose": "Suivi source de trafic Jetpack Stats" },
+        { "name": "stc",              "duration": "1 an",    "purpose": "Statistiques WordPress.com via Jetpack" }
+      ],
+      "provider": "Automattic Inc.",
+      "privacy_url": "https://automattic.com/privacy"
+    },
+
+    "mailchimp": {
+      "names": ["mailchimp-for-wp", "mc4wp-premium", "mailchimp-woocommerce"],
       "label": "Mailchimp",
       "category": "marketing",
       "cookies": [
@@ -97,43 +146,37 @@
       "provider": "The Rocket Science Group LLC",
       "privacy_url": "https://mailchimp.com/legal/privacy"
     },
+
     "hubspot": {
-      "names": [
-        "leadin",
-        "hubspot"
-      ],
+      "names": ["leadin", "hubspot"],
       "label": "HubSpot",
       "category": "marketing",
       "cookies": [
-        { "name": "__hstc",   "duration": "13 mois", "purpose": "Cookie principal de suivi visiteur HubSpot" },
-        { "name": "__hssc",   "duration": "30 minutes","purpose": "Suivi de session HubSpot" },
-        { "name": "__hssrc",  "duration": "Session",  "purpose": "Détecte si le visiteur a redémarré son navigateur" },
-        { "name": "hubspotutk","duration": "13 mois", "purpose": "Identifiant unique visiteur HubSpot" }
+        { "name": "__hstc",    "duration": "13 mois",  "purpose": "Cookie principal de suivi visiteur HubSpot" },
+        { "name": "__hssc",    "duration": "30 minutes","purpose": "Suivi de session HubSpot" },
+        { "name": "__hssrc",   "duration": "Session",   "purpose": "Détecte si le visiteur a redémarré son navigateur" },
+        { "name": "hubspotutk","duration": "13 mois",   "purpose": "Identifiant unique visiteur HubSpot" }
       ],
       "provider": "HubSpot Inc.",
       "privacy_url": "https://legal.hubspot.com/privacy-policy"
     },
+
     "linkedin-insight": {
-      "names": [
-        "wp-linkedin-auto-publish",
-        "linkedin-insight-tag",
-        "insert-headers-and-footers"
-      ],
+      "names": ["wp-linkedin-auto-publish", "linkedin-insight-tag", "insert-headers-and-footers"],
       "label": "LinkedIn Insight Tag",
       "category": "marketing",
       "cookies": [
-        { "name": "li_fat_id", "duration": "30 jours", "purpose": "Suivi conversions LinkedIn Ads" },
-        { "name": "UserMatchHistory", "duration": "30 jours", "purpose": "Synchronisation audiences LinkedIn" },
-        { "name": "bcookie", "duration": "1 an", "purpose": "Identifiant navigateur LinkedIn" }
+        { "name": "li_fat_id",         "duration": "30 jours", "purpose": "Suivi conversions LinkedIn Ads" },
+        { "name": "UserMatchHistory",  "duration": "30 jours", "purpose": "Synchronisation audiences LinkedIn" },
+        { "name": "bcookie",           "duration": "1 an",     "purpose": "Identifiant navigateur LinkedIn" },
+        { "name": "li_sugr",           "duration": "3 mois",   "purpose": "Segmentation probabiliste LinkedIn" }
       ],
       "provider": "LinkedIn Corporation",
       "privacy_url": "https://www.linkedin.com/legal/privacy-policy"
     },
+
     "google-ads": {
-      "names": [
-        "google-listings-and-ads",
-        "woocommerce-google-adwords-conversion-tracking-tag"
-      ],
+      "names": ["google-listings-and-ads", "woocommerce-google-adwords-conversion-tracking-tag"],
       "label": "Google Ads",
       "category": "marketing",
       "cookies": [
@@ -144,10 +187,9 @@
       "provider": "Google LLC",
       "privacy_url": "https://policies.google.com/privacy"
     },
+
     "contact-form-7": {
-      "names": [
-        "contact-form-7"
-      ],
+      "names": ["contact-form-7"],
       "label": "Contact Form 7",
       "category": "functional",
       "cookies": [
@@ -156,25 +198,67 @@
       "provider": "Takayuki Miyoshi",
       "privacy_url": "https://contactform7.com/privacy-policy"
     },
-    "wordfence": {
-      "names": [
-        "wordfence",
-        "wordfence-login-security"
+
+    "gravity-forms": {
+      "names": ["gravityforms", "gravityformspaypal", "gravityformsstripe"],
+      "label": "Gravity Forms",
+      "category": "functional",
+      "cookies": [
+        { "name": "gform_*",    "duration": "Session", "purpose": "Données de formulaire multi-étapes Gravity Forms" },
+        { "name": "gf_draft_*", "duration": "30 jours","purpose": "Sauvegarde brouillon formulaire Gravity Forms" }
       ],
+      "provider": "Rocketgenius Inc.",
+      "privacy_url": "https://www.gravityforms.com/privacy-policy/"
+    },
+
+    "wpforms": {
+      "names": ["wpforms-lite", "wpforms"],
+      "label": "WPForms",
+      "category": "functional",
+      "cookies": [
+        { "name": "wpforms_*", "duration": "Session", "purpose": "Données de session formulaires WPForms" }
+      ],
+      "provider": "Awesome Motive",
+      "privacy_url": "https://wpforms.com/privacy-policy/"
+    },
+
+    "ninja-forms": {
+      "names": ["ninja-forms"],
+      "label": "Ninja Forms",
+      "category": "functional",
+      "cookies": [
+        { "name": "ninja_forms_*", "duration": "Session", "purpose": "Données de session Ninja Forms" }
+      ],
+      "provider": "Saturday Drive",
+      "privacy_url": "https://ninjaforms.com/privacy-policy/"
+    },
+
+    "wordfence": {
+      "names": ["wordfence", "wordfence-login-security"],
       "label": "Wordfence Security",
       "category": "essential",
       "cookies": [
-        { "name": "wfwaf-authcookie-*", "duration": "Session", "purpose": "Authentification sécurisée Wordfence" },
-        { "name": "wordfence_verifiedHuman", "duration": "1 jour", "purpose": "Vérifie que le visiteur est humain" }
+        { "name": "wfwaf-authcookie-*",      "duration": "Session", "purpose": "Authentification sécurisée Wordfence" },
+        { "name": "wordfence_verifiedHuman", "duration": "1 jour",  "purpose": "Vérifie que le visiteur est humain" }
       ],
       "provider": "Defiant Inc.",
       "privacy_url": "https://www.wordfence.com/privacy-policy"
     },
-    "recaptcha": {
-      "names": [
-        "advanced-google-recaptcha",
-        "recaptcha-in-woocommerce"
+
+    "ithemes-security": {
+      "names": ["better-wp-security", "ithemes-security-pro"],
+      "label": "iThemes Security",
+      "category": "essential",
+      "cookies": [
+        { "name": "itsec_*",          "duration": "Session", "purpose": "Données de session iThemes Security" },
+        { "name": "itsec-hb-token-*", "duration": "Session", "purpose": "Protection brute force iThemes Security" }
       ],
+      "provider": "iThemes (Liquid Web)",
+      "privacy_url": "https://ithemes.com/privacy-policy/"
+    },
+
+    "recaptcha": {
+      "names": ["advanced-google-recaptcha", "recaptcha-in-woocommerce", "google-captcha"],
       "label": "Google reCAPTCHA",
       "category": "functional",
       "cookies": [
@@ -183,93 +267,57 @@
       "provider": "Google LLC",
       "privacy_url": "https://policies.google.com/privacy"
     },
-    "pinterest": {
-      "names": [
-        "pinterest-for-woocommerce",
-        "pinterest-rich-pins-automatic"
-      ],
-      "label": "Pinterest Tag",
-      "category": "marketing",
-      "cookies": [
-        { "name": "_pinterest_ct_ua", "duration": "1 an",    "purpose": "Suivi conversions Pinterest" },
-        { "name": "_pin_unauth",      "duration": "1 an",    "purpose": "Suivi visiteurs non connectés Pinterest" }
-      ],
-      "provider": "Pinterest Inc.",
-      "privacy_url": "https://policy.pinterest.com/privacy-policy"
-    },
-    "tiktok-pixel": {
-      "names": [
-        "tiktok-for-business",
-        "tiktok-pixel"
-      ],
-      "label": "TikTok Pixel",
-      "category": "marketing",
-      "cookies": [
-        { "name": "_ttp",  "duration": "13 mois", "purpose": "Suivi conversions TikTok Ads" },
-        { "name": "tt_appInfo", "duration": "Session", "purpose": "Données session TikTok" }
-      ],
-      "provider": "TikTok Inc.",
-      "privacy_url": "https://www.tiktok.com/legal/privacy-policy"
-    },
-    "crisp-chat": {
-      "names": [
-        "crisp-wp",
-        "crisp"
-      ],
-      "label": "Crisp Chat",
+
+    "akismet": {
+      "names": ["akismet"],
+      "label": "Akismet Anti-Spam",
       "category": "functional",
       "cookies": [
-        { "name": "crisp-client%2Fsession%2F*", "duration": "6 mois", "purpose": "Identifiant session chat Crisp" }
+        { "name": "ak_js_*", "duration": "Session", "purpose": "Empreinte horodatée pour détection spam Akismet" }
       ],
-      "provider": "Crisp IM SAS",
-      "privacy_url": "https://crisp.chat/en/privacy"
+      "provider": "Automattic Inc.",
+      "privacy_url": "https://automattic.com/privacy"
     },
-    "intercom": {
-      "names": [
-        "intercom"
-      ],
-      "label": "Intercom",
-      "category": "functional",
-      "cookies": [
-        { "name": "intercom-id-*",      "duration": "9 mois",   "purpose": "Identifiant visiteur anonyme Intercom" },
-        { "name": "intercom-session-*", "duration": "1 semaine","purpose": "Données de session Intercom" }
-      ],
-      "provider": "Intercom Inc.",
-      "privacy_url": "https://www.intercom.com/legal/privacy"
-    },
+
     "stripe": {
-      "names": [
-        "woocommerce-gateway-stripe",
-        "stripe-payments"
-      ],
+      "names": ["woocommerce-gateway-stripe", "stripe-payments"],
       "label": "Stripe",
       "category": "functional",
       "cookies": [
-        { "name": "__stripe_mid",  "duration": "1 an",     "purpose": "Prévention fraude Stripe" },
-        { "name": "__stripe_sid",  "duration": "30 minutes","purpose": "Session paiement Stripe" }
+        { "name": "__stripe_mid",  "duration": "1 an",      "purpose": "Prévention fraude Stripe" },
+        { "name": "__stripe_sid",  "duration": "30 minutes", "purpose": "Session paiement Stripe" }
       ],
       "provider": "Stripe Inc.",
       "privacy_url": "https://stripe.com/privacy"
     },
+
     "paypal": {
-      "names": [
-        "woocommerce-paypal-payments",
-        "paypal-plus-for-woocommerce"
-      ],
+      "names": ["woocommerce-paypal-payments", "paypal-plus-for-woocommerce", "woo-paypal-gateway"],
       "label": "PayPal",
       "category": "functional",
       "cookies": [
-        { "name": "PYPF",       "duration": "1 an",  "purpose": "Prévention fraude PayPal" },
-        { "name": "ts",         "duration": "3 ans", "purpose": "Sécurité et prévention fraude PayPal" },
-        { "name": "ts_c",       "duration": "3 ans", "purpose": "Sécurité transaction PayPal" }
+        { "name": "PYPF",  "duration": "1 an",  "purpose": "Prévention fraude PayPal" },
+        { "name": "ts",    "duration": "3 ans", "purpose": "Sécurité et prévention fraude PayPal" },
+        { "name": "ts_c",  "duration": "3 ans", "purpose": "Sécurité transaction PayPal" },
+        { "name": "nsid",  "duration": "Session","purpose": "Session sécurisée PayPal" }
       ],
       "provider": "PayPal Inc.",
       "privacy_url": "https://www.paypal.com/privacy"
     },
-    "systeme-io": {
-      "names": [
-        "systeme-io"
+
+    "mollie": {
+      "names": ["mollie-payments-for-woocommerce", "mollie-forms"],
+      "label": "Mollie Payments",
+      "category": "functional",
+      "cookies": [
+        { "name": "mollie_*", "duration": "Session", "purpose": "Session de paiement Mollie" }
       ],
+      "provider": "Mollie B.V.",
+      "privacy_url": "https://www.mollie.com/privacy"
+    },
+
+    "systeme-io": {
+      "names": ["systeme-io"],
       "label": "Systeme.io",
       "category": "marketing",
       "cookies": [
@@ -279,21 +327,279 @@
       "provider": "Systeme.io",
       "privacy_url": "https://systeme.io/privacy-policy"
     },
-    "cloudflare": {
-      "names": [
-        "cloudflare-flexible-ssl",
-        "wp-cloudflare-page-cache"
+
+    "pinterest": {
+      "names": ["pinterest-for-woocommerce", "pinterest-rich-pins-automatic"],
+      "label": "Pinterest Tag",
+      "category": "marketing",
+      "cookies": [
+        { "name": "_pinterest_ct_ua", "duration": "1 an", "purpose": "Suivi conversions Pinterest" },
+        { "name": "_pin_unauth",      "duration": "1 an", "purpose": "Suivi visiteurs non connectés Pinterest" }
       ],
+      "provider": "Pinterest Inc.",
+      "privacy_url": "https://policy.pinterest.com/privacy-policy"
+    },
+
+    "tiktok-pixel": {
+      "names": ["tiktok-for-business", "tiktok-pixel"],
+      "label": "TikTok Pixel",
+      "category": "marketing",
+      "cookies": [
+        { "name": "_ttp",       "duration": "13 mois", "purpose": "Suivi conversions TikTok Ads" },
+        { "name": "tt_appInfo", "duration": "Session",  "purpose": "Données session TikTok" }
+      ],
+      "provider": "TikTok Inc.",
+      "privacy_url": "https://www.tiktok.com/legal/privacy-policy"
+    },
+
+    "google-maps": {
+      "names": ["wp-google-maps", "google-maps-widget", "wp-google-map-plugin", "elementor"],
+      "label": "Google Maps",
+      "category": "functional",
+      "cookies": [
+        { "name": "CONSENT",   "duration": "2 ans",   "purpose": "Consentement cookies Google Maps" },
+        { "name": "SOCS",      "duration": "13 mois", "purpose": "Préférences consentement Google" },
+        { "name": "NID",       "duration": "6 mois",  "purpose": "Personnalisation carte Google Maps" },
+        { "name": "1P_JAR",    "duration": "1 mois",  "purpose": "Statistiques et publicité Google" }
+      ],
+      "provider": "Google LLC",
+      "privacy_url": "https://policies.google.com/privacy"
+    },
+
+    "youtube-embed": {
+      "names": ["youtube-embed-plus", "yt-player-embed", "wp-youtube-lyte", "advanced-responsive-video-embedder"],
+      "label": "YouTube (vidéos intégrées)",
+      "category": "marketing",
+      "cookies": [
+        { "name": "YSC",          "duration": "Session", "purpose": "Suivi des vidéos regardées sur YouTube" },
+        { "name": "VISITOR_INFO1_LIVE", "duration": "6 mois", "purpose": "Estimation de la bande passante YouTube" },
+        { "name": "GPS",          "duration": "30 minutes","purpose": "Géolocalisation approximative YouTube" }
+      ],
+      "provider": "Google LLC / YouTube",
+      "privacy_url": "https://policies.google.com/privacy"
+    },
+
+    "crisp-chat": {
+      "names": ["crisp-wp", "crisp"],
+      "label": "Crisp Chat",
+      "category": "functional",
+      "cookies": [
+        { "name": "crisp-client%2Fsession%2F*", "duration": "6 mois", "purpose": "Identifiant session chat Crisp" }
+      ],
+      "provider": "Crisp IM SAS",
+      "privacy_url": "https://crisp.chat/en/privacy"
+    },
+
+    "intercom": {
+      "names": ["intercom"],
+      "label": "Intercom",
+      "category": "functional",
+      "cookies": [
+        { "name": "intercom-id-*",      "duration": "9 mois",    "purpose": "Identifiant visiteur anonyme Intercom" },
+        { "name": "intercom-session-*", "duration": "1 semaine", "purpose": "Données de session Intercom" }
+      ],
+      "provider": "Intercom Inc.",
+      "privacy_url": "https://www.intercom.com/legal/privacy"
+    },
+
+    "tidio": {
+      "names": ["tidio-live-chat"],
+      "label": "Tidio Live Chat",
+      "category": "functional",
+      "cookies": [
+        { "name": "tidio_state",     "duration": "1 an",   "purpose": "État du widget Tidio" },
+        { "name": "tidio_visitor_*", "duration": "1 an",   "purpose": "Identifiant visiteur Tidio" },
+        { "name": "tidio_session_*", "duration": "Session","purpose": "Session chat Tidio" }
+      ],
+      "provider": "Tidio LLC",
+      "privacy_url": "https://www.tidio.com/privacy-policy/"
+    },
+
+    "cloudflare": {
+      "names": ["cloudflare-flexible-ssl", "wp-cloudflare-page-cache", "wp-rocket"],
       "label": "Cloudflare",
       "category": "essential",
       "cookies": [
-        { "name": "__cfduid",  "duration": "1 an",    "purpose": "Identifie le trafic Cloudflare de confiance" },
-        { "name": "cf_clearance", "duration": "1 an", "purpose": "Accès accordé après vérification Cloudflare" }
+        { "name": "__cfduid",      "duration": "1 an",  "purpose": "Identifie le trafic Cloudflare de confiance" },
+        { "name": "cf_clearance",  "duration": "1 an",  "purpose": "Accès accordé après vérification Cloudflare" },
+        { "name": "__cf_bm",       "duration": "30 min","purpose": "Protection bot Cloudflare Bot Management" },
+        { "name": "_cfuvid",       "duration": "Session","purpose": "Limitation de débit Cloudflare WAF" }
       ],
       "provider": "Cloudflare Inc.",
       "privacy_url": "https://www.cloudflare.com/privacypolicy"
+    },
+
+    "wp-rocket": {
+      "names": ["wp-rocket"],
+      "label": "WP Rocket (cache)",
+      "category": "essential",
+      "cookies": [
+        { "name": "wp_rocket_*", "duration": "Session", "purpose": "Gestion du cache WP Rocket" }
+      ],
+      "provider": "WP Media",
+      "privacy_url": "https://wp-rocket.me/privacy-policy/"
+    },
+
+    "wplms": {
+      "names": ["learnpress", "learndash", "tutor-lms", "sensei-lms"],
+      "label": "LMS (LearnPress / LearnDash / Tutor / Sensei)",
+      "category": "functional",
+      "cookies": [
+        { "name": "lp_*",         "duration": "Session", "purpose": "Session cours LearnPress" },
+        { "name": "learndash_*",  "duration": "Session", "purpose": "Progression cours LearnDash" },
+        { "name": "tutor_*",      "duration": "Session", "purpose": "Session cours Tutor LMS" }
+      ],
+      "provider": "Divers éditeurs LMS",
+      "privacy_url": "https://wordpress.org"
+    },
+
+    "monsterinsights": {
+      "names": ["google-analytics-for-wordpress"],
+      "label": "MonsterInsights",
+      "category": "analytics",
+      "cookies": [
+        { "name": "_ga",   "duration": "2 ans",     "purpose": "Identifiant Google Analytics via MonsterInsights" },
+        { "name": "_gid",  "duration": "24 heures", "purpose": "Identifiant session Google Analytics" }
+      ],
+      "provider": "MonsterInsights LLC",
+      "privacy_url": "https://www.monsterinsights.com/privacy-policy/"
+    },
+
+    "microsoft-clarity": {
+      "names": ["microsoft-clarity", "wp-clarity"],
+      "label": "Microsoft Clarity",
+      "category": "analytics",
+      "cookies": [
+        { "name": "_clck",  "duration": "1 an",    "purpose": "Identifiant utilisateur Microsoft Clarity" },
+        { "name": "_clsk",  "duration": "1 jour",  "purpose": "Session Microsoft Clarity" },
+        { "name": "CLID",   "duration": "1 an",    "purpose": "Identifiant installation Clarity" },
+        { "name": "MUID",   "duration": "13 mois", "purpose": "Identifiant utilisateur Microsoft" },
+        { "name": "SM",     "duration": "Session", "purpose": "Synchronisation MUID Microsoft" }
+      ],
+      "provider": "Microsoft Corporation",
+      "privacy_url": "https://privacy.microsoft.com/privacystatement"
+    },
+
+    "popup-maker": {
+      "names": ["popup-maker", "popups-for-divi", "elementor-popup"],
+      "label": "Popup Maker / Popups",
+      "category": "functional",
+      "cookies": [
+        { "name": "pum-*",    "duration": "1 an", "purpose": "Mémorise les popups fermées par le visiteur" },
+        { "name": "popup_*",  "duration": "1 an", "purpose": "État d'affichage des popups" }
+      ],
+      "provider": "Popup Maker",
+      "privacy_url": "https://wppopupmaker.com/privacy-policy/"
+    },
+
+    "woo-subscriptions": {
+      "names": ["woocommerce-subscriptions"],
+      "label": "WooCommerce Subscriptions",
+      "category": "functional",
+      "cookies": [
+        { "name": "wcs_*", "duration": "Session", "purpose": "Données abonnement WooCommerce Subscriptions" }
+      ],
+      "provider": "Automattic Inc.",
+      "privacy_url": "https://automattic.com/privacy"
+    },
+
+    "easydigitaldownloads": {
+      "names": ["easy-digital-downloads"],
+      "label": "Easy Digital Downloads",
+      "category": "functional",
+      "cookies": [
+        { "name": "edd_wp_session", "duration": "3 heures", "purpose": "Session panier Easy Digital Downloads" },
+        { "name": "edd_items_in_cart","duration": "1 heure","purpose": "Articles dans le panier EDD" }
+      ],
+      "provider": "Sandhills Development LLC",
+      "privacy_url": "https://easydigitaldownloads.com/privacy-policy/"
+    },
+
+    "newsletter": {
+      "names": ["newsletter", "wp-newsletter"],
+      "label": "Newsletter (plugin)",
+      "category": "marketing",
+      "cookies": [
+        { "name": "newsletter_*", "duration": "1 an", "purpose": "Suivi abonnement newsletter" }
+      ],
+      "provider": "Stefano Lissa",
+      "privacy_url": "https://www.thenewsletterplugin.com/privacy"
+    },
+
+    "brevo": {
+      "names": ["mailin", "sendinblue", "brevo-for-woocommerce"],
+      "label": "Brevo (ex Sendinblue)",
+      "category": "marketing",
+      "cookies": [
+        { "name": "sib_cuid",  "duration": "13 mois", "purpose": "Identifiant contact Brevo" },
+        { "name": "__sib_cuid","duration": "13 mois",  "purpose": "Suivi campagnes email Brevo" }
+      ],
+      "provider": "Brevo SAS",
+      "privacy_url": "https://www.brevo.com/legal/privacypolicy/"
+    },
+
+    "activecampaign": {
+      "names": ["activecampaign", "activecampaign-subscription-forms"],
+      "label": "ActiveCampaign",
+      "category": "marketing",
+      "cookies": [
+        { "name": "ac_enable_tracking", "duration": "1 an",   "purpose": "Active le suivi ActiveCampaign" },
+        { "name": "ac_contact_id",       "duration": "1 an",   "purpose": "Identifiant contact ActiveCampaign" },
+        { "name": "__actc",              "duration": "1 an",   "purpose": "Suivi visites ActiveCampaign" }
+      ],
+      "provider": "ActiveCampaign LLC",
+      "privacy_url": "https://www.activecampaign.com/privacy-policy/"
+    },
+
+    "wpml": {
+      "names": ["sitepress-multilingual-cms", "wpml-string-translation"],
+      "label": "WPML (multilingue)",
+      "category": "functional",
+      "cookies": [
+        { "name": "wp-wpml_current_language", "duration": "Session", "purpose": "Mémorise la langue choisie par le visiteur" }
+      ],
+      "provider": "OnTheGoSystems",
+      "privacy_url": "https://wpml.org/privacy-policy/"
+    },
+
+    "polylang": {
+      "names": ["polylang", "polylang-pro"],
+      "label": "Polylang",
+      "category": "functional",
+      "cookies": [
+        { "name": "pll_language", "duration": "1 an", "purpose": "Mémorise la langue préférée du visiteur" }
+      ],
+      "provider": "WP SYNTEX",
+      "privacy_url": "https://polylang.pro/privacy-policy/"
+    },
+
+    "complianz": {
+      "names": ["complianz-gdpr", "complianz-terms-conditions"],
+      "label": "Complianz RGPD",
+      "category": "essential",
+      "cookies": [
+        { "name": "cmplz_*",      "duration": "1 an", "purpose": "Stocke les préférences de consentement Complianz" },
+        { "name": "complianz_*",  "duration": "1 an", "purpose": "Consentement cookies Complianz" }
+      ],
+      "provider": "Really Simple Plugins",
+      "privacy_url": "https://complianz.io/privacy-statement/"
+    },
+
+    "cookieyes": {
+      "names": ["cookie-law-info", "cookieyes-cookie-consent"],
+      "label": "CookieYes / Cookie Law Info",
+      "category": "essential",
+      "cookies": [
+        { "name": "cookieyes-consent", "duration": "1 an", "purpose": "Stocke les préférences de consentement CookieYes" },
+        { "name": "cli_user_preference","duration": "1 an", "purpose": "Préférences cookies de l'utilisateur" },
+        { "name": "viewed_cookie_policy","duration": "1 an","purpose": "Indique si le visiteur a vu la politique cookies" }
+      ],
+      "provider": "CookieYes Ltd.",
+      "privacy_url": "https://www.cookieyes.com/privacy-policy/"
     }
+
   },
+
   "categories": {
     "essential": {
       "label": "Essentiels",
@@ -312,7 +618,7 @@
     },
     "functional": {
       "label": "Fonctionnels",
-      "description": "Améliorent l'expérience utilisateur (chat, paiement, formulaires avancés).",
+      "description": "Améliorent l'expérience utilisateur (chat, paiement, formulaires, langue).",
       "required": false
     }
   }
