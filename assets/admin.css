@@ -1,0 +1,322 @@
+/* ─── CookieRadar Admin Dashboard ────────────────────────────────────────── */
+
+/* ─── Wrap général ────────────────────────────────────────────────────────── */
+
+.cr-wrap {
+  max-width:  960px;
+  margin-top: 24px;
+}
+
+/* ─── Header ──────────────────────────────────────────────────────────────── */
+
+.cr-header {
+  background:    #233038;
+  border-radius: 10px;
+  padding:       24px 28px;
+  margin-bottom: 24px;
+  display:       flex;
+  align-items:   center;
+  gap:           16px;
+}
+
+.cr-header h1 {
+  font-size:   22px;
+  font-weight: 600;
+  color:       #ffffff;
+  margin:      0;
+  padding:     0;
+  line-height: 1;
+}
+
+.cr-tagline {
+  font-size:  13px;
+  color:      rgba(255, 255, 255, 0.55);
+  margin:     4px 0 0;
+}
+
+/* ─── Cartes compteurs ────────────────────────────────────────────────────── */
+
+.cr-cards {
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap:                   12px;
+  margin-bottom:         24px;
+}
+
+.cr-card {
+  background:    #ffffff;
+  border:        1px solid #e5e7eb;
+  border-radius: 10px;
+  padding:       16px 20px;
+  border-left:   4px solid #e5e7eb;
+}
+
+.cr-card--essential  { border-left-color: #233038; }
+.cr-card--functional { border-left-color: #f8b04a; }
+.cr-card--analytics  { border-left-color: #1D9E75; }
+.cr-card--marketing  { border-left-color: #d85734; }
+
+.cr-card__number {
+  font-size:   32px;
+  font-weight: 700;
+  line-height: 1;
+  color:       #111827;
+  margin-bottom: 4px;
+}
+
+.cr-card__label {
+  font-size:  13px;
+  color:      #6b7280;
+  font-weight: 500;
+}
+
+/* ─── Sections ────────────────────────────────────────────────────────────── */
+
+.cr-section {
+  background:    #ffffff;
+  border:        1px solid #e5e7eb;
+  border-radius: 10px;
+  padding:       20px 24px;
+  margin-bottom: 20px;
+}
+
+.cr-section h2 {
+  font-size:     16px;
+  font-weight:   600;
+  color:         #111827;
+  margin:        0 0 16px;
+  padding:       0;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 10px;
+}
+
+.cr-section__header {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  flex-wrap:       wrap;
+  gap:             10px;
+  margin-bottom:   16px;
+}
+
+.cr-section__header h2 {
+  margin:  0;
+  padding: 0;
+  border:  none;
+}
+
+.cr-meta {
+  display:     flex;
+  align-items: center;
+  gap:         10px;
+  flex-wrap:   wrap;
+}
+
+/* ─── Badges ──────────────────────────────────────────────────────────────── */
+
+.cr-badge {
+  display:       inline-block;
+  font-size:     11px;
+  font-weight:   500;
+  padding:       3px 9px;
+  border-radius: 20px;
+  line-height:   1.4;
+}
+
+.cr-badge--info      { background: #eff6ff; color: #1d4ed8; }
+.cr-badge--essential { background: #e3e8ea; color: #233038; }
+.cr-badge--functional{ background: #fef3e0; color: #8a6010; }
+.cr-badge--analytics { background: #e1f5ee; color: #0f6e56; }
+.cr-badge--marketing { background: #fde8e3; color: #933d26; }
+
+/* ─── Tableau plugins détectés ────────────────────────────────────────────── */
+
+.cr-table {
+  border-radius: 8px;
+  overflow:      hidden;
+  border:        1px solid #e5e7eb;
+  font-size:     13px;
+}
+
+.cr-table thead th {
+  background:  #f9fafb;
+  font-weight: 600;
+  font-size:   12px;
+  color:       #374151;
+  padding:     10px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cr-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.cr-table tbody tr:hover {
+  background: #f0f9ff;
+}
+
+.cr-table tbody td {
+  padding:       10px 14px;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+  color:         #374151;
+}
+
+.cr-table tbody td code {
+  font-size:     11px;
+  background:    #f3f4f6;
+  padding:       2px 5px;
+  border-radius: 3px;
+  margin-right:  3px;
+  display:       inline-block;
+  margin-bottom: 2px;
+  color:         #374151;
+}
+
+.cr-table tbody td a {
+  color:           #d85734;
+  text-decoration: none;
+}
+
+.cr-table tbody td a:hover {
+  text-decoration: underline;
+}
+
+/* ─── Lien page politique ─────────────────────────────────────────────────── */
+
+.cr-policy-link {
+  margin-top:  14px;
+  font-size:   13px;
+  color:       #6b7280;
+}
+
+.cr-policy-link a {
+  color:           #d85734;
+  text-decoration: none;
+  font-weight:     500;
+}
+
+.cr-policy-link a:hover {
+  text-decoration: underline;
+}
+
+/* ─── Bouton rescan ───────────────────────────────────────────────────────── */
+
+.cr-btn-scan {
+  font-size:   13px;
+  font-weight: 500;
+  height:      32px;
+  line-height: 1;
+}
+
+/* ─── Message vide ────────────────────────────────────────────────────────── */
+
+.cr-empty {
+  color:      #9ca3af;
+  font-style: italic;
+  font-size:  14px;
+  padding:    12px 0;
+}
+
+/* ─── Formulaire personnalisation ─────────────────────────────────────────── */
+
+.cr-form-table th {
+  font-size:   13px;
+  font-weight: 600;
+  color:       #374151;
+  padding:     12px 16px 12px 0;
+  width:       220px;
+  vertical-align: middle;
+}
+
+.cr-form-table td {
+  padding:        10px 0;
+  vertical-align: middle;
+}
+
+.cr-form-table input[type="text"],
+.cr-form-table select {
+  border:        1px solid #d1d5db;
+  border-radius: 6px;
+  padding:       7px 10px;
+  font-size:     13px;
+  color:         #111827;
+  background:    #ffffff;
+  transition:    border-color 0.15s;
+}
+
+.cr-form-table input[type="text"]:focus,
+.cr-form-table select:focus {
+  border-color: #233038;
+  outline:      none;
+  box-shadow:   0 0 0 2px rgba(35, 48, 56, 0.12);
+}
+
+.cr-form-table input[type="color"] {
+  width:         44px;
+  height:        36px;
+  border:        1px solid #d1d5db;
+  border-radius: 6px;
+  padding:       2px;
+  cursor:        pointer;
+  background:    #ffffff;
+}
+
+.cr-form-table .description {
+  font-size:  12px;
+  color:      #9ca3af;
+  margin-top: 4px;
+}
+
+/* ─── Submit button override ──────────────────────────────────────────────── */
+
+.cr-wrap #submit,
+.cr-wrap .button-primary {
+  background:    #d85734;
+  border-color:  #d85734;
+  color:         #ffffff;
+  font-weight:   500;
+  border-radius: 6px;
+  padding:       8px 20px;
+  height:        auto;
+  font-size:     13px;
+  transition:    background 0.2s;
+}
+
+.cr-wrap #submit:hover,
+.cr-wrap .button-primary:hover {
+  background:   #c04a2a;
+  border-color: #c04a2a;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 782px) {
+  .cr-header {
+    flex-direction: column;
+    align-items:    flex-start;
+    gap:            6px;
+  }
+
+  .cr-section__header {
+    flex-direction: column;
+    align-items:    flex-start;
+  }
+
+  .cr-form-table th {
+    width:   100%;
+    display: block;
+    padding-bottom: 4px;
+  }
+
+  .cr-form-table td {
+    display: block;
+    padding-top: 0;
+  }
+
+  .cr-form-table input[type="text"] {
+    width: 100%;
+  }
+}
